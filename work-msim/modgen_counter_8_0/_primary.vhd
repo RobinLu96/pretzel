@@ -11,6 +11,7 @@ entity modgen_counter_8_0 is
         aset            : in     vl_logic;
         sclear          : in     vl_logic;
         updn            : in     vl_logic;
-        cnt_en          : in     vl_logic
+        cnt_en          : in     vl_logic;
+        p_nrst_int_dup_11: in     vl_logic
     );
 end modgen_counter_8_0;

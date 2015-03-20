@@ -10,7 +10,7 @@
 //  
 //  Running on Windows Vista ahseegob@ECE-CPUIO26 Service Pack 1 6.01.7601 x86
 //  
-//  Start time Thu Mar 19 18:06:24 2015
+//  Start time Fri Mar 20 14:39:20 2015
 # -------------------------------------------------
 # Info: [9566]: Logging session transcript to file P:/ECE327/proj/precision.log
 # Info: [9575]: Results directory: P:/ECE327/proj/uw_tmp/
@@ -28,6 +28,8 @@
 # Info: [42502]: Analyzing input file "P:/ECE327/proj/mem.vhd" ...
 # Info: [42502]: Analyzing input file "P:/ECE327/proj/kirsch_synth_pkg.vhd" ...
 # Info: [42502]: Analyzing input file "P:/ECE327/proj/kirsch.vhd" ...
+# Info: [42502]: Analyzing input file "P:/ECE327/proj/lib_kirsch.vhd" ...
+# Info: [42502]: Analyzing input file "P:/ECE327/proj/top_kirsch.vhd" ...
 # Info: [641]: Current working directory: P:/ECE327/proj/uw_tmp/.
 # Info: [40000]: RTLC-Driver, Release RTLC-Precision 2008a.22
 # Info: [40000]: Last compiled on Nov 27 2008 14:28:35
@@ -36,17 +38,82 @@
 # Info: [40000]: RTLCompiler, Release RTLC-Precision 2008a.22
 # Info: [40000]: Last compiled on Nov 27 2008 14:34:50
 # Info: [44512]: Initializing...
-# Info: [44522]: Root Module work.kirsch(main): Pre-processing...
+# Info: [44522]: Root Module work.top_kirsch(main): Pre-processing...
+# Info: [44506]: Module work.uw_uart(main): Pre-processing...
+# Info: [44506]: Module work.UARTS(RTL): Pre-processing...
+# Info: [45143]: "P:/ECE327/proj/lib_kirsch.vhd", line 133: Enumerated type TxFSM_State with 5 elements encoded as onehot.
+# Info: [45144]: Encodings for TxFSM_State values.
+# Info: [40000]: value                              	                   TxFSM_State[4-0]
+# Info: [40000]: Idle                               	                         ----1
+# Info: [40000]: Load_Tx                            	                         ---1-
+# Info: [40000]: Shift_TX                           	                         --1--
+# Info: [40000]: Parity_Tx                          	                         -1---
+# Info: [40000]: Stop_Tx                            	                         1----
+# Info: [45143]: "P:/ECE327/proj/lib_kirsch.vhd", line 136: Enumerated type RxFSM_State with 8 elements encoded as onehot.
+# Info: [45144]: Encodings for RxFSM_State values.
+# Info: [40000]: value                              	                   RxFSM_State[7-0]
+# Info: [40000]: Idle                               	                      -------1
+# Info: [40000]: Start_Rx                           	                      ------1-
+# Info: [40000]: Shift_RX                           	                      -----1--
+# Info: [40000]: Edge_Rx                            	                      ----1---
+# Info: [40000]: Parity_Rx                          	                      ---1----
+# Info: [40000]: Parity_2                           	                      --1-----
+# Info: [40000]: Stop_Rx                            	                      -1------
+# Info: [40000]: RxOVF                              	                      1-------
+# Info: [40000]: FSM: Removing state for un-assigned literal      01000
+# Info: [45144]: Extracted FSM in module work.UARTS(RTL), with state variable = TxFSM[4:0], async set/reset state(s) = 00001 , number of states = 4.
+# Info: [45144]: Re-encoding 4 state FSM as "binary".
+# Info: [45144]: FSM: State encoding table.
+# Info: [40000]: FSM:	Index	     State Name	                            Literal	                      Encoding
+# Info: [40000]: FSM:	    0	           Idle	                              00001	                            00
+# Info: [40000]: FSM:	    1	        Load_Tx	                              00010	                            01
+# Info: [40000]: FSM:	    2	       Shift_TX	                              00100	                            10
+# Info: [40000]: FSM:	    3	        Stop_Tx	                              10000	                            11
+# Info: [40000]: FSM: Removing state for un-assigned literal   00010000
+# Info: [45144]: Extracted FSM in module work.UARTS(RTL), with state variable = RxFSM[7:0], async set/reset state(s) = 00000001 , number of states = 7.
+# Info: [45144]: Re-encoding 7 state FSM as "onehot".
+# Info: [45144]: FSM: State encoding table.
+# Info: [40000]: FSM:	Index	     State Name	                            Literal	                      Encoding
+# Info: [40000]: FSM:	    0	           Idle	                           00000001	                       0000001
+# Info: [40000]: FSM:	    1	       Start_Rx	                           00000010	                       0000010
+# Info: [40000]: FSM:	    2	        Edge_Rx	                           00001000	                       0000100
+# Info: [40000]: FSM:	    3	       Shift_RX	                           00000100	                       0001000
+# Info: [40000]: FSM:	    4	       Parity_2	                           00100000	                       0010000
+# Info: [40000]: FSM:	    5	        Stop_Rx	                           01000000	                       0100000
+# Info: [40000]: FSM:	    6	          RxOVF	                           10000000	                       1000000
+# Info: [44506]: Module work.kirsch(main): Pre-processing...
 # Info: [44506]: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Pre-processing...
 # Info: [45251]: Built-in hardware memory core inferred for variable ': mem.mem depth = 256, width = 8'.
 # Warning: [45729]: "P:/ECE327/proj/kirsch.vhd", line 21: Input port debug_key has never been used.
 # Warning: [45729]: "P:/ECE327/proj/kirsch.vhd", line 22: Input port debug_switch has never been used.
-# Warning: [45729]: "P:/ECE327/proj/kirsch.vhd", line 87: signal sub1[7:0] has never been used.
-# Warning: [45729]: "P:/ECE327/proj/kirsch.vhd", line 88: signal sub2[9:0] has never been used.
-# Warning: [45729]: "P:/ECE327/proj/kirsch.vhd", line 88: signal sub3[9:0] has never been used.
-# Warning: [45729]: "P:/ECE327/proj/kirsch.vhd", line 89: signal sub4[6:0] has never been used.
+# Warning: [45729]: "P:/ECE327/proj/top_kirsch.vhd", line 58: signal NC has never been used.
+# Info: [44508]: Module work.UARTS(RTL): Compiling...
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register TxDivisor(9) with TxDivisor(9)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register TxDivisor(7) with TxDivisor(7)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register TxDivisor(4) with TxDivisor(4)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register TxDivisor(3) with TxDivisor(3)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register TxDivisor(1) with TxDivisor(1)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register TxDivisor(0) with TxDivisor(0)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register RxDivisor(10) with RxDivisor(10)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register RxDivisor(8) with RxDivisor(8)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register RxDivisor(7) with RxDivisor(7)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register RxDivisor(6) with RxDivisor(6)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register RxDivisor(4) with RxDivisor(4)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register RxDivisor(3) with RxDivisor(3)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register RxDivisor(2) with RxDivisor(2)
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Sharing register RxDivisor(0) with RxDivisor(0)
+# Info: [44838]: "P:/ECE327/proj/lib_kirsch.vhd", line 219: Macro Modgen_Counter "counter_up_sclear_aclear_clock_0_11" inferred for node "RxDiv".
+# Info: [44838]: "P:/ECE327/proj/lib_kirsch.vhd", line 241: Macro Modgen_Counter "counter_up_sclear_aclear_clock_0_12" inferred for node "TxDiv".
+# Info: [44838]: "P:/ECE327/proj/lib_kirsch.vhd", line 287: Macro Modgen_Counter "counter_dn_sload_aclear_clock_clk_en_cnt_en_0_4" inferred for node "TxBitCnt".
+# Info: [44838]: "P:/ECE327/proj/lib_kirsch.vhd", line 371: Macro Modgen_Counter "counter_up_sclear_aclear_clock_clk_en_0_4" inferred for node "RxBitCnt".
+# Info: [44508]: Module work.uw_uart(main): Compiling...
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 525: Sharing register mdata[7] with mdata[6]
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 525: Sharing register mdata[5] with mdata[4]
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 563: Sharing register sdout[7] with sdout[6]
+# Info: [44812]: "P:/ECE327/proj/lib_kirsch.vhd", line 563: Sharing register sdout[5] with sdout[4]
+# Info: [44838]: "P:/ECE327/proj/lib_kirsch.vhd", line 535: Macro Modgen_Counter "counter_up_sclear_clock_clk_en_0_16" inferred for node "waitcount".
 # Info: [44508]: Module work.mem(main){generic map (data_width => 8 addr_width => 8)}: Compiling...
-# Info: [44523]: Root Module work.kirsch(main): Compiling...
+# Info: [44508]: Module work.kirsch(main): Compiling...
 # Warning: [45668]: "P:/ECE327/proj/kirsch.vhd", line 289: The comparison operator has been optimized to constant.
 # Info: [44812]: "P:/ECE327/proj/kirsch.vhd", line 157: Sharing register v[0] with v[0]
 # Info: [44812]: "P:/ECE327/proj/kirsch.vhd", line 239: Sharing register dir2[2] with dir2[0]
@@ -71,6 +138,14 @@
 # Info: [44812]: "P:/ECE327/proj/kirsch.vhd", line 297: Sharing register r7[0] with r6[0]
 # Info: [44838]: "P:/ECE327/proj/kirsch.vhd", line 197: Macro Modgen_Counter "counter_up_sclear_clock_cnt_en_0_8" inferred for node "x".
 # Info: [44838]: "P:/ECE327/proj/kirsch.vhd", line 203: Macro Modgen_Counter "counter_up_sclear_clock_clk_en_cnt_en_0_8" inferred for node "y".
+# Info: [44523]: Root Module work.top_kirsch(main): Compiling...
+# Warning: [45733]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Optimizing state bit(s) RxDivisor[9] to constant 0
+# Warning: [45733]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Optimizing state bit(s) RxDivisor[5] to constant 0
+# Warning: [45733]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Optimizing state bit(s) RxDivisor[1] to constant 0
+# Warning: [45733]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Optimizing state bit(s) TxDivisor[10] to constant 0
+# Warning: [45733]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Optimizing state bit(s) TxDivisor[6] to constant 0
+# Warning: [45733]: "P:/ECE327/proj/lib_kirsch.vhd", line 184: Optimizing state bit(s) TxDivisor[2] to constant 0
+# Warning: [45733]: "P:/ECE327/proj/lib_kirsch.vhd", line 317: Optimizing state bit(s) RxFSM[4] to constant 0
 # Warning: [43642]: "P:/ECE327/proj/uw_tmp//rtlc.out/INCR/.rtlDivMacro.rtl", line 1: Design unit MYPACK0 is already present in library rtlc_div_mod_rem_lib. Overwriting old definition of this design unit.
 # Warning: [43642]: "P:/ECE327/proj/uw_tmp//rtlc.out/INCR/.rtlDivMacro.rtl", line 1: Design unit MYPACK0 is already present in library rtlc_div_mod_rem_lib. Overwriting old definition of this design unit.
 # Warning: [43642]: "P:/ECE327/proj/uw_tmp//rtlc.out/INCR/.rtlDivMacro.rtl", line 1: Design unit RTLCDIV_M_RTLSIM_UNS_MOD_STATIC_2_3_2_2 is already present in library rtlc_div_mod_rem_lib. Overwriting old definition of this design unit.
@@ -81,42 +156,54 @@
 # Warning: [45733]: "P:/ECE327/proj/kirsch.vhd", line 239: Optimizing state bit(s) dir2[1] to constant 0
 # Warning: [45733]: "P:/ECE327/proj/kirsch.vhd", line 239: Optimizing state bit(s) dir3[1:0] to constant 1
 # Warning: [45733]: "P:/ECE327/proj/kirsch.vhd", line 239: Optimizing state bit(s) dir4[1] to constant 0
+# Warning: [45733]: "P:/ECE327/proj/top_kirsch.vhd", line 19: Optimizing state bit(s) o_sevenseg[15] to constant 1
+# Warning: [45733]: "P:/ECE327/proj/top_kirsch.vhd", line 19: Optimizing state bit(s) o_sevenseg[7] to constant 1
+# Warning: [45733]: "P:/ECE327/proj/top_kirsch.vhd", line 28: Optimizing state bit(s) debug_sevenseg_0[7] to constant 1
+# Warning: [45733]: "P:/ECE327/proj/top_kirsch.vhd", line 29: Optimizing state bit(s) debug_sevenseg_1[7] to constant 1
+# Warning: [45733]: "P:/ECE327/proj/top_kirsch.vhd", line 30: Optimizing state bit(s) debug_sevenseg_2[7] to constant 1
+# Warning: [45733]: "P:/ECE327/proj/top_kirsch.vhd", line 31: Optimizing state bit(s) debug_sevenseg_3[7] to constant 1
+# Warning: [45733]: "P:/ECE327/proj/top_kirsch.vhd", line 32: Optimizing state bit(s) debug_sevenseg_4[7] to constant 1
+# Warning: [45733]: "P:/ECE327/proj/top_kirsch.vhd", line 33: Optimizing state bit(s) debug_sevenseg_5[7] to constant 1
 # Info: [44842]: Compilation successfully completed.
-# Info: [44841]: Counter Inferencing === Detected : 2, Inferred (Modgen/Selcounter/AddSub) : 2 (2 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 0), Local Vars : 0 ===
-# Info: [44835]: Total CPU time taken for compilation: 3.3 secs.
-# Info: [44856]: Total lines of RTL compiled: 538.
-# Info: [44513]: Overall running time 4.0 secs.
+# Info: [44841]: Counter Inferencing === Detected : 7, Inferred (Modgen/Selcounter/AddSub) : 7 (7 / 0 / 0), AcrossDH (Merged/Not-Merged) : (0 / 0), Not-Inferred (Acrossdh/Attempted) : (0 / 0), Local Vars : 0 ===
+# Info: [44835]: Total CPU time taken for compilation: 4.5 secs.
+# Info: [44856]: Total lines of RTL compiled: 1155.
+# Info: [44513]: Overall running time 6.0 secs.
 # Info: [641]: Current working directory: P:/ECE327/proj/uw_tmp/.
 # Info: [644]: Finished compiling design.
-# Info: -- Saving the design database in uw_tmp/kirsch_gate.xdb
-# Info: [3026]: Writing file: uw_tmp/kirsch_gate.vhd.
+# Info: -- Saving the design database in uw_tmp/top_kirsch_gate.xdb
+# Info: [3026]: Writing file: uw_tmp/top_kirsch_gate.vhd.
 # Info: Info, Command 'auto_write' finished successfully
 # Info: [641]: Current working directory: P:/ECE327/proj/uw_tmp/.
-# Info: [4552]: 3 Instances are flattened in hierarchical block .work.kirsch.main.
-# Info: [15002]: Optimizing design view:.work.kirsch.main
+# Info: [4552]: 3 Instances are flattened in hierarchical block .work.kirsch.main_unfold_1777.
+# Info: [15002]: Optimizing design view:.work.UARTS.RTL_unfold_1358
+# Info: [15002]: Optimizing design view:.work.uw_uart.main
+# Info: [15002]: Optimizing design view:.work.kirsch.main_unfold_1777
+# Info: [15002]: Optimizing design view:.work.top_kirsch.main
 # Info: [12041]: -- Running timing characterization...
-# Info: [15002]: Optimizing design view:.work.kirsch.main
-# Info: [15112]: 8 DFFs were moved to top level for I/O mapping.
-# Info: [15111]: 17 I/O registers on critical path unpacked.
-# Info: -- Saving the design database in P:/ECE327/proj/uw_tmp/kirsch.xdb
-# Info: [3026]: Writing file: P:/ECE327/proj/uw_tmp/kirsch.edf.
-# Info: Info, Writing xrf file 'P:/ECE327/proj/uw_tmp/kirsch.xrf'
-# Info: [3026]: Writing file: P:/ECE327/proj/uw_tmp/kirsch.xrf.
-# Info: -- Writing file P:/ECE327/proj/uw_tmp/kirsch.tcl
-# Info: exq_pr_compile_project gen_vcf kirsch 1
+# Info: [15002]: Optimizing design view:.work.UARTS.RTL_unfold_1358
+# Info: [15002]: Optimizing design view:.work.kirsch.main_unfold_1777
+# Info: [15112]: 1 DFFs were moved to top level for I/O mapping.
+# Info: [15111]: 15 I/O registers on critical path unpacked.
+# Info: -- Saving the design database in P:/ECE327/proj/uw_tmp/top_kirsch.xdb
+# Info: [3026]: Writing file: P:/ECE327/proj/uw_tmp/top_kirsch.edf.
+# Info: Info, Writing xrf file 'P:/ECE327/proj/uw_tmp/top_kirsch.xrf'
+# Info: [3026]: Writing file: P:/ECE327/proj/uw_tmp/top_kirsch.xrf.
+# Info: -- Writing file P:/ECE327/proj/uw_tmp/top_kirsch.tcl
+# Info: exq_pr_compile_project gen_vcf top_kirsch 1
 # Info: [644]: Finished synthesizing design.
-# Info: [11019]: Total CPU time taken for synthesis: 3.0 secs.
-# Info: [11020]: Overall running time 5.1 secs.
+# Info: [11019]: Total CPU time taken for synthesis: 4.6 secs.
+# Info: [11020]: Overall running time 7.5 secs.
 # Info: P:/ECE327/proj/uw_tmp/precision_tech.sdc
-# Info: -- Saving the design database in uw_tmp/kirsch_logic.xdb
-# Info: [3026]: Writing file: uw_tmp/kirsch_logic.vhd.
-# Info: Info, Writing xrf file 'uw_tmp/kirsch_logic.xrf'
-# Info: [3026]: Writing file: uw_tmp/kirsch_logic.xrf.
+# Info: -- Saving the design database in uw_tmp/top_kirsch_logic.xdb
+# Info: [3026]: Writing file: uw_tmp/top_kirsch_logic.vhd.
+# Info: Info, Writing xrf file 'uw_tmp/top_kirsch_logic.xrf'
+# Info: [3026]: Writing file: uw_tmp/top_kirsch_logic.xrf.
 # Info: Info, Command 'auto_write' finished successfully
-# Info: i_clock
-# Info: -- Saving the design database in uw_tmp/kirsch_logic.xdb
-# Info: [3026]: Writing file: uw_tmp/kirsch_logic.v.
-# Info: Warning, Moving uw_tmp/kirsch_logic.xrf to uw_tmp/mgc_old_kirsch_logic.xrf as uw_tmp/kirsch_logic.xrf exists
-# Info: [3026]: Writing file: uw_tmp/kirsch_logic.xrf.
+# Info: clk
+# Info: -- Saving the design database in uw_tmp/top_kirsch_logic.xdb
+# Info: [3026]: Writing file: uw_tmp/top_kirsch_logic.v.
+# Info: Warning, Moving uw_tmp/top_kirsch_logic.xrf to uw_tmp/mgc_old_top_kirsch_logic.xrf as uw_tmp/top_kirsch_logic.xrf exists
+# Info: [3026]: Writing file: uw_tmp/top_kirsch_logic.xrf.
 # Info: Info, Command 'auto_write' finished successfully
 # Info: *** logic synthesis succeeded ***

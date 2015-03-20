@@ -1,5 +1,5 @@
 Flow report for top_kirsch
-Thu Mar 19 16:50:32 2015
+Fri Mar 20 14:40:33 2015
 Quartus II Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Full Version
 
 
@@ -38,15 +38,15 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Thu Mar 19 16:50:32 2015          ;
+; Flow Status                        ; Successful - Fri Mar 20 14:40:33 2015          ;
 ; Quartus II Version                 ; 10.1 Build 197 01/19/2011 SP 1 SJ Full Version ;
 ; Revision Name                      ; top_kirsch                                     ;
 ; Top-level Entity Name              ; top_kirsch                                     ;
 ; Family                             ; Cyclone II                                     ;
-; Total logic elements               ; 502 / 33,216 ( 2 % )                           ;
-;     Total combinational functions  ; 405 / 33,216 ( 1 % )                           ;
-;     Dedicated logic registers      ; 365 / 33,216 ( 1 % )                           ;
-; Total registers                    ; 365                                            ;
+; Total logic elements               ; 554 / 33,216 ( 2 % )                           ;
+;     Total combinational functions  ; 393 / 33,216 ( 1 % )                           ;
+;     Dedicated logic registers      ; 447 / 33,216 ( 1 % )                           ;
+; Total registers                    ; 447                                            ;
 ; Total pins                         ; 115 / 475 ( 24 % )                             ;
 ; Total virtual pins                 ; 0                                              ;
 ; Total memory bits                  ; 6,144 / 483,840 ( 1 % )                        ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/19/2015 16:49:56 ;
+; Start date & time ; 03/20/2015 14:39:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top_kirsch          ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-----------------------+-------------------------------+---------------+-------------+------------+
 ; Assignment Name       ; Value                         ; Default Value ; Entity Name ; Section Id ;
 +-----------------------+-------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID ; 9210263402976.142679819603116 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID ; 9210263402976.142687679806096 ; --            ; --          ; --         ;
 +-----------------------+-------------------------------+---------------+-------------+------------+
 
 
@@ -83,11 +83,11 @@ applicable agreement for further details.
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 270 MB              ; 00:00:01                           ;
-; Fitter               ; 00:00:07     ; 1.0                     ; 369 MB              ; 00:00:06                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 302 MB              ; 00:00:02                           ;
+; Fitter               ; 00:00:07     ; 1.3                     ; 369 MB              ; 00:00:06                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 302 MB              ; 00:00:02                           ;
 ; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 236 MB              ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:03     ; 1.0                     ; 236 MB              ; 00:00:01                           ;
-; Total                ; 00:00:22     ; --                      ; --                  ; 00:00:11                           ;
+; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

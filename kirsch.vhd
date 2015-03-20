@@ -354,39 +354,58 @@ begin
     end if;
   end process;
 
-  --max1
-  sub1 <= std_logic_vector(signed("0"&unsigned(r1)) - signed("0"&unsigned(r2)));
-  max1 <= r1 when (sub1(8)='0')
-         else r2;
-  
-  --max2
-  sub2 <= std_logic_vector(signed("0"&unsigned(r9)) - signed("0"&unsigned(r10)));
-  max2 <= r9 when (sub2(10)='0')
-          else r10;
+	process
+	begin
+		wait until rising_edge(i_clock);
+		--max1
+		sub1 <= std_logic_vector(signed("0"&unsigned(r1)) - signed("0"&unsigned(r2)));
+		if (sub1(8)='0') then
+			max1 <= r1; 
+		else 
+			max1 <= r2;
+		end if;
+	  
+		--max2
+		sub2 <= std_logic_vector(signed("0"&unsigned(r9)) - signed("0"&unsigned(r10)));
+		if (sub2(10)='0') then
+			max2 <= r9; 
+		else 
+			max2 <= r10;
+		end if;
 
-  --max3
-  sub3 <= std_logic_vector(signed("0"&unsigned(r11)) - signed("0"&unsigned(r12)));
-  max3 <= std_logic_vector(unsigned(r11)) when (sub3(10)='0')
-          else std_logic_vector(unsigned(r12));
+		--max3
+		sub3 <= std_logic_vector(signed("0"&unsigned(r11)) - signed("0"&unsigned(r12)));
+		if (sub3(10)='0') then
+			max3 <= std_logic_vector(unsigned(r11));
+		else 
+			max3 <= std_logic_vector(unsigned(r12));
+		end if;
 
-  --add1 (9-bit adder)
-  add1 <= std_logic_vector("0"&unsigned(r3) + unsigned(r4));
+		--add1 (9-bit adder)
+		add1 <= std_logic_vector("0"&unsigned(r3) + unsigned(r4));
 
-  --add2 (10-bit adder)
-  add2 <= std_logic_vector("00"&unsigned(r5) + unsigned(r6));
+		--add2 (10-bit adder)
+		add2 <= std_logic_vector("00"&unsigned(r5) + unsigned(r6));
 
-  --add3 (11-bit adder)
-  add3 <= std_logic_vector("00"&unsigned(r7) + unsigned(r8));
+		--add3 (11-bit adder)
+		add3 <= std_logic_vector("00"&unsigned(r7) + unsigned(r8));
 
-  --add4 (13-bit adder)
-  add4 <= std_logic_vector("00"&unsigned(r13) + unsigned(unsigned(r13)&"0"));
+		--add4 (13-bit adder)
+		add4 <= std_logic_vector("00"&unsigned(r13) + unsigned(unsigned(r13)&"0"));
 
-  --sub4 (14-bit subtractor)
-  sub4 <= std_logic_vector(signed("0"&unsigned(r14)) - signed("0"&unsigned(r15))) when v(7) = '1'
-          else std_logic_vector(to_signed(0, 14));
+		--sub4 (14-bit subtractor)
+		if v(7) = '1' then
+			sub4 <= std_logic_vector(signed("0"&unsigned(r14)) - signed("0"&unsigned(r15)));
+		else 
+			sub4 <= std_logic_vector(to_signed(0, 14));
+		end if;
 
-  output_edge <= '0' when sub4(13) = '1'
-                 else ((sub4(7) and sub4(8)) or (sub4(12) or sub4(11) or sub4(10) or sub4(9)));
+		if sub4(13) = '1' then
+			output_edge <= '0'; 
+		else 
+			output_edge <= ((sub4(7) and sub4(8)) or (sub4(12) or sub4(11) or sub4(10) or sub4(9)));
+		end if;
+	end process;
 
   --connecting to output ports
   o_row <= std_logic_vector(y);

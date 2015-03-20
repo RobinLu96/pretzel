@@ -14,19 +14,19 @@ Info: Running Quartus II Programmer
     Info: programming logic devices manufactured by Altera and sold by 
     Info: Altera or its authorized distributors.  Please refer to the 
     Info: applicable agreement for further details.
-    Info: Processing started: Thu Mar 19 16:53:48 2015
+    Info: Processing started: Fri Mar 20 14:42:24 2015
 Info: Command: quartus_pgm uw_tmp/uw-dnld-quartus.cdf
 Info: Using programming cable "USB-Blaster [USB-0]"
-Info: Using programming file top_kirsch.sof with checksum 0x0033DF02 for device EP2C35F672@1
-Info: Started Programmer operation at Thu Mar 19 16:53:48 2015
+Info: Using programming file top_kirsch.sof with checksum 0x003445F3 for device EP2C35F672@1
+Info: Started Programmer operation at Fri Mar 20 14:42:24 2015
 Info: Configuring device index 1
 Info: Device 1 contains JTAG ID code 0x020B40DD
 Info: Configuration succeeded -- 1 device(s) configured
 Info: Successfully performed operation(s)
-Info: Ended Programmer operation at Thu Mar 19 16:53:50 2015
+Info: Ended Programmer operation at Fri Mar 20 14:42:26 2015
 Info: Quartus II Programmer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 129 megabytes
-    Info: Processing ended: Thu Mar 19 16:53:50 2015
+    Info: Processing ended: Fri Mar 20 14:42:26 2015
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:00
 INFO: Using SOF file : top_kirsch.sof

@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu Mar 19 16:50:10 2015
+Fitter Status : Successful - Fri Mar 20 14:40:11 2015
 Quartus II Version : 10.1 Build 197 01/19/2011 SP 1 SJ Full Version
 Revision Name : top_kirsch
 Top-level Entity Name : top_kirsch
 Family : Cyclone II
 Device : EP2C35F672C7
 Timing Models : Final
-Total logic elements : 502 / 33,216 ( 2 % )
-    Total combinational functions : 405 / 33,216 ( 1 % )
-    Dedicated logic registers : 365 / 33,216 ( 1 % )
-Total registers : 365
+Total logic elements : 554 / 33,216 ( 2 % )
+    Total combinational functions : 393 / 33,216 ( 1 % )
+    Dedicated logic registers : 447 / 33,216 ( 1 % )
+Total registers : 447
 Total pins : 115 / 475 ( 24 % )
 Total virtual pins : 0
 Total memory bits : 6,144 / 483,840 ( 1 % )

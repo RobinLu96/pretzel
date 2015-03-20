@@ -1,5 +1,5 @@
 EDA Netlist Writer report for top_kirsch
-Thu Mar 19 16:50:32 2015
+Fri Mar 20 14:40:33 2015
 Quartus II Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Full Version
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Mar 19 16:50:32 2015 ;
+; EDA Netlist Writer Status ; Successful - Fri Mar 20 14:40:33 2015 ;
 ; Revision Name             ; top_kirsch                            ;
 ; Top-level Entity Name     ; top_kirsch                            ;
 ; Family                    ; Cyclone II                            ;
@@ -95,13 +95,13 @@ Info: Running Quartus II EDA Netlist Writer
     Info: programming logic devices manufactured by Altera and sold by 
     Info: Altera or its authorized distributors.  Please refer to the 
     Info: applicable agreement for further details.
-    Info: Processing started: Thu Mar 19 16:50:29 2015
+    Info: Processing started: Fri Mar 20 14:40:30 2015
 Info: Command: quartus_eda top_kirsch --simulation=on --tool=modelsim --format=verilog
 Info: Generated simulation netlist will be non-hierarchical because the design has SignalTap II partitions, termination control logic and/or a design partition that contains bidirectional ports
 Info: Generated files "top_kirsch.vo" and "top_kirsch_v.sdo" in directory "P:/ECE327/proj/uw_tmp/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 236 megabytes
-    Info: Processing ended: Thu Mar 19 16:50:32 2015
+    Info: Processing ended: Fri Mar 20 14:40:33 2015
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:01
 

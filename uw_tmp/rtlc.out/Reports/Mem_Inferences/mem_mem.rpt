@@ -1,6 +1,6 @@
 Inferred RAM
 ------------
-  1. Instance: rtlcmem_mem_44_n1
+  1. Instance: rtlcmem_mem_64_n1
     File: P:/ECE327/proj/mem.vhd , Net: mem, Type: single port
     port 1  read
     port 1  address width: 8

@@ -2,7 +2,7 @@
 
 	Domain                  Clock Name                            Min Period (Freq)
 	------                  ----------                            -----------------
-	ClockDomain0            clk                                   5.397 (185.288 MHz)  
+	ClockDomain0            clk                                   5.480 (182.482 MHz)  
 -- Device: Altera - Cyclone II : EP2C35F672C : 7
 -- CTE report summary..
                   CTE Report Summary
@@ -15,16 +15,16 @@ Setup Slack Path Summary
        Setup   Path   Source  Dest.                                                                                          End 
 Index  Slack   Delay  Clock   Clock                Data Start Pin                               Data End Pin                 Edge
 -----  ------  -----  ------  -----  ------------------------------------------  ------------------------------------------  ----
-  1    -1.397  4.639  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(7)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
-  2    -1.374  4.616  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(6)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
-  3    -1.253  4.495  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(3)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
-  4    -1.230  4.472  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(2)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
-  5    -1.174  4.416  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(5)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
-  6    -1.030  4.272  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(4)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
-  7    -0.845  4.087  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(1)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
-  8    -0.782  4.024  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(0)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
-  9    -0.662  3.904  clk     clk    u_kirsch/modgen_counter_x/reg_q(1)/clk      u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
- 10    -0.639  3.881  clk     clk    u_kirsch/modgen_counter_x/reg_q(0)/clk      u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+  1    -1.480  4.722  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(7)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+  2    -1.457  4.699  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(6)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+  3    -1.377  4.619  clk     clk    u_kirsch/modgen_counter_x/reg_q(1)/clk      u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+  4    -1.354  4.596  clk     clk    u_kirsch/modgen_counter_x/reg_q(0)/clk      u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+  5    -1.336  4.578  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(3)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+  6    -1.313  4.555  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(2)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+  7    -1.257  4.499  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(5)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+  8    -1.233  4.475  clk     clk    u_kirsch/modgen_counter_x/reg_q(7)/clk      u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+  9    -1.210  4.452  clk     clk    u_kirsch/modgen_counter_x/reg_q(6)/clk      u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
+ 10    -1.113  4.355  clk     clk    u_kirsch/modgen_counter_o_row/reg_q(4)/clk  u_kirsch/modgen_counter_o_row/reg_q(7)/ena  Rise
 
 -- Device: Altera - Cyclone II : EP2C35F672C : 7
 -- CTE report summary..
@@ -37,7 +37,7 @@ End CTE Report Summary ..... CPU Time Used: 0 sec.
                   CTE Path Report
 
 
-Critical path #1, (path slack = -1.397):
+Critical path #1, (path slack = -1.480):
 
 SOURCE CLOCK: name: clk period: 4.000000
      Times are relative to the 1st rising edge
@@ -48,22 +48,22 @@ NAME                                                   GATE                     
 u_kirsch/modgen_counter_o_row/reg_q(7)/clk          cycloneii_lcell_ff                   0.000   up
 u_kirsch/modgen_counter_o_row/reg_q(7)/regout       cycloneii_lcell_ff         0.000     0.000   up
 u_kirsch/modgen_counter_o_row/nx1041z1              (net)                      0.450                  10
-u_kirsch/ix6176z52925/dataa                         cycloneii_lcell_comb                 0.450   up
-u_kirsch/ix6176z52925/combout                       cycloneii_lcell_comb       0.545     0.995   up
-u_kirsch/nx6176z3                                   (net)                      0.270                   1
-u_kirsch/ix6176z52924/datac                         cycloneii_lcell_comb                 1.265   up
-u_kirsch/ix6176z52924/combout                       cycloneii_lcell_comb       0.322     1.587   up
-u_kirsch/nx6176z2                                   (net)                      0.490                  12
-u_kirsch/ix17322z52924/datab                        cycloneii_lcell_comb                 2.077   up
-u_kirsch/ix17322z52924/combout                      cycloneii_lcell_comb       0.522     2.599   up
-u_kirsch/nx17322z2                                  (net)                      0.270                   1
-u_kirsch/ix17322z52923/dataa                        cycloneii_lcell_comb                 2.869   up
-u_kirsch/ix17322z52923/combout                      cycloneii_lcell_comb       0.545     3.414   up
+u_kirsch/ix17322z52926/dataa                        cycloneii_lcell_comb                 0.450   up
+u_kirsch/ix17322z52926/combout                      cycloneii_lcell_comb       0.545     0.995   up
+u_kirsch/nx17322z4                                  (net)                      0.270                   1
+u_kirsch/ix17322z52925/datac                        cycloneii_lcell_comb                 1.265   up
+u_kirsch/ix17322z52925/combout                      cycloneii_lcell_comb       0.322     1.587   up
+u_kirsch/nx17322z3                                  (net)                      0.450                  10
+u_kirsch/ix17322z52924/dataa                        cycloneii_lcell_comb                 2.037   up
+u_kirsch/ix17322z52924/combout                      cycloneii_lcell_comb       0.545     2.582   up
+u_kirsch/nx17322z2                                  (net)                      0.370                   6
+u_kirsch/ix17322z52923/dataa                        cycloneii_lcell_comb                 2.952   up
+u_kirsch/ix17322z52923/combout                      cycloneii_lcell_comb       0.545     3.497   up
 u_kirsch/nx17322z1                                  (net)                      0.270                   1
-u_kirsch/modgen_counter_o_row/ix57253z52923/dataa   cycloneii_lcell_comb                 3.684   up
-u_kirsch/modgen_counter_o_row/ix57253z52923/combout cycloneii_lcell_comb       0.545     4.229   up
+u_kirsch/modgen_counter_o_row/ix57253z52923/dataa   cycloneii_lcell_comb                 3.767   up
+u_kirsch/modgen_counter_o_row/ix57253z52923/combout cycloneii_lcell_comb       0.545     4.312   up
 u_kirsch/modgen_counter_o_row/nx57253z3             (net)                      0.410                   8
-u_kirsch/modgen_counter_o_row/reg_q(7)/ena          cycloneii_lcell_ff                   4.639   up
+u_kirsch/modgen_counter_o_row/reg_q(7)/ena          cycloneii_lcell_ff                   4.722   up
 
 		Initial edge separation:      4.000
 		Source clock delay:      -    1.383
@@ -73,8 +73,8 @@ u_kirsch/modgen_counter_o_row/reg_q(7)/ena          cycloneii_lcell_ff          
 		Setup constraint:        -    0.758
 		                        -----------
 		Data required time:           3.242
-		Data arrival time:       -    4.639   ( 53.44% cell delay, 46.56% net delay )
+		Data arrival time:       -    4.722   ( 52.99% cell delay, 47.01% net delay )
 		                        -----------
-		Slack (VIOLATED):            -1.397
+		Slack (VIOLATED):            -1.480
 
 End CTE Analysis ..... CPU Time Used: 0 sec.

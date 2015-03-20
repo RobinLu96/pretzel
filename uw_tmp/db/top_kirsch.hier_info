@@ -132,6 +132,16 @@ i_clock => reg_v_1_.CLK
 i_clock => reg_v_0_.CLK
 i_clock => reg_t_1_.CLK
 i_clock => reg_t_0_.CLK
+i_clock => reg_sub4_9_.CLK
+i_clock => reg_sub4_8_.CLK
+i_clock => reg_sub4_7_.CLK
+i_clock => reg_sub4_13_.CLK
+i_clock => reg_sub4_12_.CLK
+i_clock => reg_sub4_11_.CLK
+i_clock => reg_sub4_10_.CLK
+i_clock => reg_sub3_10_.CLK
+i_clock => reg_sub2_10_.CLK
+i_clock => reg_sub1_8_.CLK
 i_clock => reg_r9_9_.CLK
 i_clock => reg_r9_8_.CLK
 i_clock => reg_r9_7_.CLK
@@ -257,8 +267,37 @@ i_clock => reg_r1_2_.CLK
 i_clock => reg_r1_1_.CLK
 i_clock => reg_r1_0_.CLK
 i_clock => reg_output_valid.CLK
+i_clock => reg_output_edge.CLK
 i_clock => reg_mode_1_.CLK
 i_clock => reg_mode_0_.CLK
+i_clock => reg_max3_9_.CLK
+i_clock => reg_max3_8_.CLK
+i_clock => reg_max3_7_.CLK
+i_clock => reg_max3_6_.CLK
+i_clock => reg_max3_5_.CLK
+i_clock => reg_max3_4_.CLK
+i_clock => reg_max3_3_.CLK
+i_clock => reg_max3_2_.CLK
+i_clock => reg_max3_1_.CLK
+i_clock => reg_max3_0_.CLK
+i_clock => reg_max2_9_.CLK
+i_clock => reg_max2_8_.CLK
+i_clock => reg_max2_7_.CLK
+i_clock => reg_max2_6_.CLK
+i_clock => reg_max2_5_.CLK
+i_clock => reg_max2_4_.CLK
+i_clock => reg_max2_3_.CLK
+i_clock => reg_max2_2_.CLK
+i_clock => reg_max2_1_.CLK
+i_clock => reg_max2_0_.CLK
+i_clock => reg_max1_7_.CLK
+i_clock => reg_max1_6_.CLK
+i_clock => reg_max1_5_.CLK
+i_clock => reg_max1_4_.CLK
+i_clock => reg_max1_3_.CLK
+i_clock => reg_max1_2_.CLK
+i_clock => reg_max1_1_.CLK
+i_clock => reg_max1_0_.CLK
 i_clock => reg_i_7_.CLK
 i_clock => reg_i_6_.CLK
 i_clock => reg_i_5_.CLK
@@ -338,6 +377,49 @@ i_clock => reg_b_3_.CLK
 i_clock => reg_b_2_.CLK
 i_clock => reg_b_1_.CLK
 i_clock => reg_b_0_.CLK
+i_clock => reg_add4_9_.CLK
+i_clock => reg_add4_8_.CLK
+i_clock => reg_add4_7_.CLK
+i_clock => reg_add4_6_.CLK
+i_clock => reg_add4_5_.CLK
+i_clock => reg_add4_4_.CLK
+i_clock => reg_add4_3_.CLK
+i_clock => reg_add4_2_.CLK
+i_clock => reg_add4_12_.CLK
+i_clock => reg_add4_11_.CLK
+i_clock => reg_add4_10_.CLK
+i_clock => reg_add4_1_.CLK
+i_clock => reg_add4_0_.CLK
+i_clock => reg_add3_9_.CLK
+i_clock => reg_add3_8_.CLK
+i_clock => reg_add3_7_.CLK
+i_clock => reg_add3_6_.CLK
+i_clock => reg_add3_5_.CLK
+i_clock => reg_add3_4_.CLK
+i_clock => reg_add3_3_.CLK
+i_clock => reg_add3_2_.CLK
+i_clock => reg_add3_10_.CLK
+i_clock => reg_add3_1_.CLK
+i_clock => reg_add3_0_.CLK
+i_clock => reg_add2_9_.CLK
+i_clock => reg_add2_8_.CLK
+i_clock => reg_add2_7_.CLK
+i_clock => reg_add2_6_.CLK
+i_clock => reg_add2_5_.CLK
+i_clock => reg_add2_4_.CLK
+i_clock => reg_add2_3_.CLK
+i_clock => reg_add2_2_.CLK
+i_clock => reg_add2_1_.CLK
+i_clock => reg_add2_0_.CLK
+i_clock => reg_add1_8_.CLK
+i_clock => reg_add1_7_.CLK
+i_clock => reg_add1_6_.CLK
+i_clock => reg_add1_5_.CLK
+i_clock => reg_add1_4_.CLK
+i_clock => reg_add1_3_.CLK
+i_clock => reg_add1_2_.CLK
+i_clock => reg_add1_1_.CLK
+i_clock => reg_add1_0_.CLK
 i_clock => reg_a_7_.CLK
 i_clock => reg_a_6_.CLK
 i_clock => reg_a_5_.CLK
@@ -353,6 +435,7 @@ i_reset => reg_t_0_.SCLR
 i_reset => reg_mode_1_.SCLR
 i_reset => reg_mode_0_.SCLR
 i_reset => reg_end_of_img.SCLR
+i_valid => modgen_counter_8_0:modgen_counter_x.cnt_en
 i_valid => reg_v_0_.DATAIN
 i_valid => reg_i_7_.ENA
 i_valid => reg_i_6_.ENA
@@ -410,19 +493,21 @@ i_valid => reg_a_3_.ENA
 i_valid => reg_a_2_.ENA
 i_valid => reg_a_1_.ENA
 i_valid => reg_a_0_.ENA
-i_valid => ix19087z52924.DATAD
+i_valid => ix38525z52924.DATAB
+i_valid => ix6176z52923.DATAC
+i_valid => ix17322z52923.DATAC
 i_valid => ix20492z52924.DATAA
-i_valid => ix19087z52932.DATAA
 i_valid => ix19087z52930.DATAA
 i_valid => ix19087z52929.DATAA
 i_valid => ix19087z52928.DATAA
 i_valid => ix19087z52927.DATAA
 i_valid => ix19087z52926.DATAA
 i_valid => ix19087z52925.DATAA
+i_valid => ix19087z52924.DATAA
 i_valid => ix24222z52923.DATAA
 i_valid => ix19087z52931.DATAA
 i_valid => ix13952z52923.DATAA
-i_valid => ix19087z52923.DATAD
+i_valid => ix19087z52923.DATAB
 i_pixel[0] => ram_dq_8_0:m1_mem.wr_data1[0]
 i_pixel[0] => ram_dq_8_1:m2_mem.wr_data1[0]
 i_pixel[0] => ram_dq_8_2:m3_mem.wr_data1[0]
@@ -456,7 +541,7 @@ i_pixel[7] => ram_dq_8_1:m2_mem.wr_data1[7]
 i_pixel[7] => ram_dq_8_2:m3_mem.wr_data1[7]
 i_pixel[7] => reg_e_7_.DATAIN
 o_valid <= reg_output_valid.REGOUT
-o_edge <= ix45767z52923.COMBOUT
+o_edge <= reg_output_edge.REGOUT
 o_dir[0] <= ix63886z52923.COMBOUT
 o_dir[1] <= ix62889z52923.COMBOUT
 o_dir[2] <= ix61892z52923.COMBOUT
@@ -540,16 +625,16 @@ debug_num_5[1] <= <UNC>
 debug_num_5[2] <= <UNC>
 debug_num_5[3] <= <UNC>
 p_rtlcs6 <= ix11375z52923.COMBOUT
-p_nrst_int => modgen_counter_8_0:modgen_counter_x.p_nrst_int_dup_13
+p_nrst_int => modgen_counter_8_0:modgen_counter_x.p_nrst_int_dup_11
 p_nrst_int => ix38525z52924.DATAC
-p_nrst_int => ix6176z52930.DATAD
+p_nrst_int => ix6176z52923.DATAD
 p_nrst_int => ix17322z52923.DATAD
-p_nrst_int => ix17322z52925.DATAD
+p_nrst_int => ix17322z52931.DATAD
 p_nrst_int => ix26373z52923.DATAD
-px36 <= reg_mode_0_.REGOUT
+px34 <= reg_mode_0_.REGOUT
 
 
-|top_kirsch|kirsch:u_kirsch|add_8_0:add1_add8_4
+|top_kirsch|kirsch:u_kirsch|add_8_0:add1_add8_22i31
 cin => ~NO_FANOUT~
 a[0] => ix44952z52931.DATAA
 a[1] => ix44952z52930.DATAB
@@ -578,7 +663,7 @@ d[7] <= ix44952z52923.COMBOUT
 cout <= ix23445z52923.COMBOUT
 
 
-|top_kirsch|kirsch:u_kirsch|add_9_0:add2_add9_5
+|top_kirsch|kirsch:u_kirsch|add_9_0:add2_add9_22i32
 cin => ~NO_FANOUT~
 a[0] => ix45949z52932.DATAA
 a[1] => ix45949z52931.DATAB
@@ -610,7 +695,7 @@ d[8] <= ix45949z52923.COMBOUT
 cout <= ix23445z52923.COMBOUT
 
 
-|top_kirsch|kirsch:u_kirsch|add_11_0:add3_add11_0
+|top_kirsch|kirsch:u_kirsch|add_11_0:add3_add11_22i1
 cin => ~NO_FANOUT~
 a[0] => ix62798z52934.DATAA
 a[1] => ix62798z52933.DATAB
@@ -648,7 +733,7 @@ d[10] <= ix62798z52923.COMBOUT
 cout <= <UNC>
 
 
-|top_kirsch|kirsch:u_kirsch|add_11_1:add4_add11_6
+|top_kirsch|kirsch:u_kirsch|add_11_1:add4_add11_22i35
 cin => ~NO_FANOUT~
 a[0] => ix62798z52933.DATAA
 a[0] => ix62798z52934.DATAA
@@ -694,48 +779,6 @@ d[8] <= ix62798z52926.COMBOUT
 d[9] <= ix62798z52925.COMBOUT
 d[10] <= ix62798z52923.COMBOUT
 cout <= ix23445z52923.COMBOUT
-
-
-|top_kirsch|kirsch:u_kirsch|sub_12_0:ix45767z50555
-cin => ~NO_FANOUT~
-a[0] => ~NO_FANOUT~
-a[1] => ~NO_FANOUT~
-a[2] => ix63795z52933.DATAB
-a[3] => ix63795z52932.DATAB
-a[4] => ix63795z52931.DATAB
-a[5] => ix63795z52930.DATAB
-a[6] => ix63795z52929.DATAB
-a[7] => ix63795z52928.DATAB
-a[8] => ix63795z52927.DATAB
-a[9] => ix63795z52926.DATAB
-a[10] => ix63795z52925.DATAB
-a[11] => ix63795z52923.DATAB
-b[0] => ix63795z52935.DATAB
-b[1] => ix63795z52934.DATAA
-b[2] => ix63795z52933.DATAA
-b[3] => ix63795z52932.DATAA
-b[4] => ix63795z52931.DATAA
-b[5] => ix63795z52930.DATAA
-b[6] => ix63795z52929.DATAA
-b[7] => ix63795z52928.DATAA
-b[8] => ix63795z52927.DATAA
-b[9] => ix63795z52926.DATAA
-b[10] => ix63795z52925.DATAA
-b[11] => ix63795z52923.DATAA
-d[0] <= <UNC>
-d[1] <= <UNC>
-d[2] <= <UNC>
-d[3] <= <UNC>
-d[4] <= <UNC>
-d[5] <= <UNC>
-d[6] <= ix63795z52929.COMBOUT
-d[7] <= ix63795z52928.COMBOUT
-d[8] <= ix63795z52927.COMBOUT
-d[9] <= ix63795z52926.COMBOUT
-d[10] <= ix63795z52925.COMBOUT
-d[11] <= ix63795z52923.COMBOUT
-cout <= ix23445z52923.COMBOUT
-p_r15_0_ => ix63795z52935.DATAA
 
 
 |top_kirsch|kirsch:u_kirsch|ram_dq_8_0:m1_mem
@@ -1428,10 +1471,10 @@ sclear => reg_q_1_.SCLR
 sclear => reg_q_0_.SCLR
 updn => ~NO_FANOUT~
 cnt_en => ix57253z52923.DATAA
-p_nrst_int_dup_13 => ix57253z52923.DATAB
+p_nrst_int_dup_11 => ix57253z52923.DATAB
 
 
-|top_kirsch|kirsch:u_kirsch|sub_8_0:sub1_sub8_1
+|top_kirsch|kirsch:u_kirsch|sub_8_0:sub1_sub8_22i30
 cin => ~NO_FANOUT~
 a[0] => ix23445z52931.DATAA
 a[1] => ix23445z52930.DATAB
@@ -1460,7 +1503,7 @@ d[7] <= <UNC>
 cout <= ix23445z52923.COMBOUT
 
 
-|top_kirsch|kirsch:u_kirsch|sub_10_0:sub2_sub10_2
+|top_kirsch|kirsch:u_kirsch|sub_10_0:sub2_sub10_22i33
 cin => ~NO_FANOUT~
 a[0] => ix23445z52933.DATAA
 a[1] => ix23445z52932.DATAB
@@ -1495,7 +1538,7 @@ d[9] <= <UNC>
 cout <= ix23445z52923.COMBOUT
 
 
-|top_kirsch|kirsch:u_kirsch|sub_10_1:sub3_sub10_3
+|top_kirsch|kirsch:u_kirsch|sub_10_1:sub3_sub10_22i34
 cin => ~NO_FANOUT~
 a[0] => ix23445z52933.DATAA
 a[1] => ix23445z52932.DATAB
@@ -1528,6 +1571,48 @@ d[7] <= <UNC>
 d[8] <= <UNC>
 d[9] <= <UNC>
 cout <= ix23445z52923.COMBOUT
+
+
+|top_kirsch|kirsch:u_kirsch|sub_12_0:sub4_sub13_22i36
+cin => ~NO_FANOUT~
+a[0] => ~NO_FANOUT~
+a[1] => ~NO_FANOUT~
+a[2] => ix63795z52933.DATAB
+a[3] => ix63795z52932.DATAB
+a[4] => ix63795z52931.DATAB
+a[5] => ix63795z52930.DATAB
+a[6] => ix63795z52929.DATAB
+a[7] => ix63795z52928.DATAB
+a[8] => ix63795z52927.DATAB
+a[9] => ix63795z52926.DATAB
+a[10] => ix63795z52925.DATAB
+a[11] => ix63795z52923.DATAB
+b[0] => ix63795z52935.DATAB
+b[1] => ix63795z52934.DATAA
+b[2] => ix63795z52933.DATAA
+b[3] => ix63795z52932.DATAA
+b[4] => ix63795z52931.DATAA
+b[5] => ix63795z52930.DATAA
+b[6] => ix63795z52929.DATAA
+b[7] => ix63795z52928.DATAA
+b[8] => ix63795z52927.DATAA
+b[9] => ix63795z52926.DATAA
+b[10] => ix63795z52925.DATAA
+b[11] => ix63795z52923.DATAA
+d[0] <= <UNC>
+d[1] <= <UNC>
+d[2] <= <UNC>
+d[3] <= <UNC>
+d[4] <= <UNC>
+d[5] <= <UNC>
+d[6] <= ix63795z52929.COMBOUT
+d[7] <= ix63795z52928.COMBOUT
+d[8] <= ix63795z52927.COMBOUT
+d[9] <= ix63795z52926.COMBOUT
+d[10] <= ix63795z52925.COMBOUT
+d[11] <= ix63795z52923.COMBOUT
+cout <= ix23445z52923.COMBOUT
+p_r15_0_ => ix63795z52935.DATAA
 
 
 |top_kirsch|uw_uart:u_uw_uart
@@ -1614,7 +1699,7 @@ p_nrst_int => ix33354z52923.DATAC
 p_nrst_int => ix40736z52924.DATAB
 p_nrst_int => ix33354z52924.DATAC
 p_nrst_int => ix15671z52923.DATAB
-px36 => ix36748z52924.DATAC
+px34 => ix36748z52924.DATAC
 
 
 |top_kirsch|uw_uart:u_uw_uart|UARTS:i_uarts

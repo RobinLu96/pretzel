@@ -20,6 +20,9 @@ entity kirsch is
         debug_num_2     : out    vl_logic_vector(3 downto 0);
         debug_num_3     : out    vl_logic_vector(3 downto 0);
         debug_num_4     : out    vl_logic_vector(3 downto 0);
-        debug_num_5     : out    vl_logic_vector(3 downto 0)
+        debug_num_5     : out    vl_logic_vector(3 downto 0);
+        p_rtlcs6        : out    vl_logic;
+        p_nrst_int      : in     vl_logic;
+        px34            : out    vl_logic
     );
 end kirsch;

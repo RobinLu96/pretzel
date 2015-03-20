@@ -18,6 +18,6 @@ entity uw_uart is
         \p_o_mode_dup0_1_\: in     vl_logic;
         \p_o_mode_dup0_0_\: in     vl_logic;
         p_nrst_int      : in     vl_logic;
-        px36            : in     vl_logic
+        px34            : in     vl_logic
     );
 end uw_uart;

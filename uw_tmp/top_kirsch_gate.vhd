@@ -2,7 +2,7 @@
 -- 
 -- Definition of  top_kirsch
 -- 
---      03/19/15 16:49:36
+--      03/20/15 14:39:38
 --      
 --      Precision RTL Synthesis, 2008a.47
 -- 
@@ -1664,30 +1664,6 @@ architecture main_unfold_1777 of kirsch is
          wren : IN std_logic ;
          q : OUT std_logic_vector (7 DOWNTO 0)) ;
    end component ;
-   component add_11u_11u_11u_0_0
-      port (
-         cin : IN std_logic ;
-         a : IN std_logic_vector (10 DOWNTO 0) ;
-         b : IN std_logic_vector (10 DOWNTO 0) ;
-         d : OUT std_logic_vector (10 DOWNTO 0) ;
-         cout : OUT std_logic) ;
-   end component ;
-   component sub_8u_8u_8u_0
-      port (
-         cin : IN std_logic ;
-         a : IN std_logic_vector (7 DOWNTO 0) ;
-         b : IN std_logic_vector (7 DOWNTO 0) ;
-         d : OUT std_logic_vector (7 DOWNTO 0) ;
-         cout : OUT std_logic) ;
-   end component ;
-   component sub_10u_10u_10u_0
-      port (
-         cin : IN std_logic ;
-         a : IN std_logic_vector (9 DOWNTO 0) ;
-         b : IN std_logic_vector (9 DOWNTO 0) ;
-         d : OUT std_logic_vector (9 DOWNTO 0) ;
-         cout : OUT std_logic) ;
-   end component ;
    component or_3u_3u
       port (
          a : IN std_logic_vector (2 DOWNTO 0) ;
@@ -1698,6 +1674,14 @@ architecture main_unfold_1777 of kirsch is
          cin : IN std_logic ;
          a : IN std_logic_vector (1 DOWNTO 0) ;
          d : OUT std_logic_vector (1 DOWNTO 0) ;
+         cout : OUT std_logic) ;
+   end component ;
+   component add_11u_11u_11u_0_0
+      port (
+         cin : IN std_logic ;
+         a : IN std_logic_vector (10 DOWNTO 0) ;
+         b : IN std_logic_vector (10 DOWNTO 0) ;
+         d : OUT std_logic_vector (10 DOWNTO 0) ;
          cout : OUT std_logic) ;
    end component ;
    component and_4u_4u
@@ -1747,6 +1731,14 @@ architecture main_unfold_1777 of kirsch is
          updn : IN std_logic ;
          cnt_en : IN std_logic) ;
    end component ;
+   component sub_8u_8u_8u_0
+      port (
+         cin : IN std_logic ;
+         a : IN std_logic_vector (7 DOWNTO 0) ;
+         b : IN std_logic_vector (7 DOWNTO 0) ;
+         d : OUT std_logic_vector (7 DOWNTO 0) ;
+         cout : OUT std_logic) ;
+   end component ;
    component add_8u_8u_8u_0_0
       port (
          cin : IN std_logic ;
@@ -1761,6 +1753,14 @@ architecture main_unfold_1777 of kirsch is
          a : IN std_logic_vector (8 DOWNTO 0) ;
          b : IN std_logic_vector (8 DOWNTO 0) ;
          d : OUT std_logic_vector (8 DOWNTO 0) ;
+         cout : OUT std_logic) ;
+   end component ;
+   component sub_10u_10u_10u_0
+      port (
+         cin : IN std_logic ;
+         a : IN std_logic_vector (9 DOWNTO 0) ;
+         b : IN std_logic_vector (9 DOWNTO 0) ;
+         d : OUT std_logic_vector (9 DOWNTO 0) ;
          cout : OUT std_logic) ;
    end component ;
    procedure DFFPC (
@@ -1934,68 +1934,83 @@ architecture main_unfold_1777 of kirsch is
    
    signal add3: std_logic_vector (10 DOWNTO 0) ;
    
-   signal add4: std_logic_vector (12 DOWNTO 1) ;
+   signal add4: std_logic_vector (12 DOWNTO 0) ;
    
-   signal sub1_8, sub4_13, sub4_12, sub4_11, sub4_10, sub4_9, sub4_8, sub4_7, 
-      end_of_img: std_logic ;
+   signal sub1_8, sub2_10, sub3_10, sub4_13, sub4_12, sub4_11, sub4_10, 
+      sub4_9, sub4_8, sub4_7, end_of_img: std_logic ;
    
    signal addr_x: std_logic_vector (7 DOWNTO 0) ;
    
    signal addr_t: std_logic_vector (1 DOWNTO 0) ;
    
-   signal debug_num_5_1_EXMPLR431, rtlc7n260, rtlc7n294, rtlc7n332, 
-      rtlc11n44, rtlc11n52, rtlc16n0_16n1s2_13, rtlc16n0_16n1s2_12, 
-      rtlc16n0_16n1s2_11, rtlc16n0_16n1s2_10, rtlc16n0_16n1s2_9, 
-      rtlc16n0_16n1s2_8, rtlc16n0_16n1s2_7, rtlc17n0_17n1s3, rtlc17n0_17n1s2, 
-      not_i_reset, rtlc19n35, rtlc19n36, rtlc19n42, rtlc19n43, not_rtlc19n43, 
+   signal debug_num_5_1_EXMPLR431, rtlc11n44, rtlc11n52, rtlc13n17, 
+      not_i_reset, rtlc14n35, rtlc14n36, rtlc14n42, rtlc14n43, not_rtlc14n43, 
       not_end_of_img: std_logic ;
    
-   signal t_20n2s2: std_logic_vector (1 DOWNTO 0) ;
+   signal t_15n2s2: std_logic_vector (1 DOWNTO 0) ;
    
-   signal t_20n2s1: std_logic_vector (1 DOWNTO 0) ;
+   signal t_15n2s1: std_logic_vector (1 DOWNTO 0) ;
    
-   signal not_rtlcn158, rtlc20n212, not_rtlcn169, rtlc20n268, not_rtlcs4, 
-      rtlc20n281, rtlc20n282, rtlc20_X_0_n283, not_rtlc20n268, rtlc20n331, 
-      rtlc20n332: std_logic ;
-   
-   signal c_21n1ss1: std_logic_vector (7 DOWNTO 0) ;
-   
-   signal d_21n1ss1: std_logic_vector (7 DOWNTO 0) ;
-   
-   signal rtlc21n169, rtlc22n176, rtlc22n179, rtlc22n182, dir5_23n5ss1_2, 
-      dir6_23n5ss1_2, rtlc23n83: std_logic ;
-   
-   signal dir7_24n3ss1: std_logic_vector (2 DOWNTO 0) ;
-   
-   signal not_v_6, rtlc24n41, not_rtlc24n41: std_logic ;
-   
-   signal r8_25n1ss1: std_logic_vector (8 DOWNTO 0) ;
-   
-   signal r9_25n4ss1: std_logic_vector (9 DOWNTO 0) ;
-   
-   signal r1_25n6ss1: std_logic_vector (7 DOWNTO 0) ;
-   
-   signal r2_25n6ss1: std_logic_vector (7 DOWNTO 0) ;
-   
-   signal r3_25n6ss1: std_logic_vector (7 DOWNTO 0) ;
-   
-   signal r4_25n6ss1: std_logic_vector (7 DOWNTO 0) ;
-   
-   signal rtlc25n226, rtlc25n236, rtlc26n59, rtlc26n204, rtlc26n205, 
-      rtlc26n206, rtlc26n207, rtlcn2, rtlcn140, not_rtlc7n294, rtlcn143, 
-      rtlcn147, rtlcn158, rtlcn159, rtlcn160, not_rtlc20n212, not_rtlcs7, 
-      not_v_3, not_rtlcn160, not_v_1, not_v_4, rtlcn167, not_v_0, rtlcs0, 
-      rtlcs1, rtlcs2, rtlcs3, rtlcs4, rtlcs5, rtlcs6, rtlcs7, rtlcn169, 
-      not_rtlc11n52, not_addr_t_1, not_addr_t_0, not_sub4_13, not_rtlc7n332, 
-      not_o_mode_1, not_o_mode_0, rtlcn666, t_modu2_20i1_rtlcm_0_not_in1_0, 
-      t_modu2_20i1_rtlcm_0_not_in1_1, NOT_r15_0, nx342, nx345, nx351, nx354, 
-      nx360, nx363, nx369, nx372, nx378, nx381, nx387, nx390, nx396, nx399, 
-      nx405, nx408, nx414, nx417, nx423, nx426, nx432, nx435, nx441, nx444, 
-      nx450, nx453, nx459, nx462, nx468, nx471, nx477, nx480, nx486, nx489, 
-      nx495, nx498, nx504, nx507, nx513, nx516, nx522, nx525, nx532, nx536, 
-      nx544, nx547, nx555, nx559, nx567, nx571, nx577, nx580, nx586, nx589, 
-      nx595, nx599, nx606, nx609, nx615, nx619, nx627, nx630, nx637, nx641: 
+   signal not_rtlcn154, rtlc15n211, not_rtlcn165, rtlc15n267, not_rtlcs4, 
+      rtlc15n280, rtlc15n281, rtlc15_X_0_n282, not_rtlc15n267, rtlc15n331: 
    std_logic ;
+   
+   signal c_16n1ss1: std_logic_vector (7 DOWNTO 0) ;
+   
+   signal d_16n1ss1: std_logic_vector (7 DOWNTO 0) ;
+   
+   signal rtlc16n169, not_sub1_8, rtlc17n176, rtlc17n179, rtlc17n182, 
+      dir5_18n5ss1_2, dir6_18n5ss1_2, not_sub2_10, rtlc18n83: std_logic ;
+   
+   signal dir7_19n3ss1: std_logic_vector (2 DOWNTO 0) ;
+   
+   signal r8_20n1ss1: std_logic_vector (8 DOWNTO 0) ;
+   
+   signal r9_20n4ss1: std_logic_vector (9 DOWNTO 0) ;
+   
+   signal r1_20n6ss1: std_logic_vector (7 DOWNTO 0) ;
+   
+   signal r2_20n6ss1: std_logic_vector (7 DOWNTO 0) ;
+   
+   signal r3_20n6ss1: std_logic_vector (7 DOWNTO 0) ;
+   
+   signal r4_20n6ss1: std_logic_vector (7 DOWNTO 0) ;
+   
+   signal rtlc20n226, rtlc20n236, rtlc21n59, rtlc21n204, rtlc21n205, 
+      rtlc21n206, rtlc21n207: std_logic ;
+   
+   signal max1_22n1ss1: std_logic_vector (7 DOWNTO 0) ;
+   
+   signal max2_22n2ss1: std_logic_vector (9 DOWNTO 0) ;
+   
+   signal max3_22n3ss1: std_logic_vector (9 DOWNTO 0) ;
+   
+   signal sub1_22n1s1_8, sub2_22n2s1_10, sub3_22n3s1_10: std_logic ;
+   
+   signal add1_22n4s1: std_logic_vector (8 DOWNTO 0) ;
+   
+   signal add2_22n4s1: std_logic_vector (9 DOWNTO 0) ;
+   
+   signal add3_22n4s1: std_logic_vector (10 DOWNTO 0) ;
+   
+   signal add4_22n4s1: std_logic_vector (12 DOWNTO 1) ;
+   
+   signal sub4_22n4s1_13, sub4_22n4s1_12, sub4_22n4s1_11, sub4_22n4s1_10, 
+      sub4_22n4s1_9, sub4_22n4s1_8, sub4_22n4s1_7, not_v_7, 
+      output_edge_22n5s2, output_edge_22n5s1, rtlcn2, rtlcn140, rtlcn141, 
+      rtlcn145, rtlcn154, rtlcn155, rtlcn156, not_rtlc15n211, not_rtlcs7, 
+      not_v_3, not_rtlcn156, not_v_1, not_v_4, rtlcn163, not_v_0, rtlcs0, 
+      rtlcs1, rtlcs2, rtlcs3, rtlcs4, rtlcs5, rtlcs6, rtlcs7, rtlcn165, 
+      not_rtlc11n52, not_addr_t_1, not_addr_t_0, not_o_mode_1, not_o_mode_0, 
+      rtlcn381, rtlcn637, rtlcn708, rtlcn746, rtlcn811, 
+      t_modu2_15i1_rtlcm_0_not_in1_0, t_modu2_15i1_rtlcm_0_not_in1_1, 
+      NOT_r15_0, nx318, nx321, nx327, nx330, nx336, nx339, nx345, nx348, 
+      nx354, nx357, nx363, nx366, nx372, nx375, nx381, nx384, nx390, nx393, 
+      nx399, nx402, nx408, nx411, nx417, nx420, nx426, nx429, nx435, nx438, 
+      nx444, nx447, nx453, nx456, nx462, nx465, nx471, nx474, nx480, nx483, 
+      nx489, nx492, nx500, nx504, nx511, nx515, nx523, nx527, nx535, nx538, 
+      nx544, nx547, nx553, nx556, nx563, nx567, nx574, nx577, nx585, nx589, 
+      nx596, nx599, nx605, nx609, nx615, nx618: std_logic ;
    
    signal DANGLING : std_logic_vector (51 downto 0 );
 
@@ -2085,204 +2100,180 @@ begin
       i_pixel(2), data(1)=>i_pixel(1), data(0)=>i_pixel(0), wren=>wren_m3, 
       q(7)=>q3(7), q(6)=>q3(6), q(5)=>q3(5), q(4)=>q3(4), q(3)=>q3(3), q(2)
       =>q3(2), q(1)=>q3(1), q(0)=>q3(0));
-   add3_add11_0 : add_11u_11u_11u_0_0 port map ( cin=>
+   rtlc11n44 <= i_valid AND rtlcs4 ;
+   rtlc11n52 <= rtlc11n44 AND rtlcs3 ;
+   rtlc13n17 <= o_edge_EXMPLR416 AND v(7) ;
+   rtlc14n42 <= rtlcs5 AND not_v_0 ;
+   rtlc14n35 <= not_i_reset AND rtlcs6 ;
+   rtlc14n36 <= end_of_img OR rtlc14n35 ;
+   rtlc14n43 <= rtlc14n36 OR rtlc14n42 ;
+   not_i_reset <= NOT i_reset ;
+   not_rtlc15n267 <= NOT rtlc15n267 ;
+   rtlc15n281 <= rtlcs3 AND end_of_img ;
+   rtlc15n280 <= end_of_img AND not_rtlcs4 ;
+   rtlc15_54_or_15 : or_3u_3u port map ( a(2)=>i_reset, a(1)=>rtlc15n280, 
+      a(0)=>rtlc15n281, d=>rtlc15_X_0_n282);
+   not_end_of_img <= NOT end_of_img ;
+   t_inc2_15i2 : inc_2u_2u_0 port map ( cin=>debug_num_5_1_EXMPLR431, a(1)=>
+      t(1), a(0)=>t(0), d(1)=>t_15n2s2(1), d(0)=>t_15n2s2(0), cout=>DANGLING
+      (0));
+   rtlc21n59 <= v(6) AND rtlc21n207 ;
+   rtlc21n204 <= x(0) AND x(1) ;
+   rtlc21n206 <= o_row_EXMPLR435(1) AND rtlc21n205 ;
+   output_edge_22n5s2 <= sub4_7 AND sub4_8 ;
+   not_v_7 <= NOT v(7) ;
+   add3_add11_22i1 : add_11u_11u_11u_0_0 port map ( cin=>
       debug_num_5_0_EXMPLR430, a(10)=>debug_num_5_0_EXMPLR430, a(9)=>
       debug_num_5_0_EXMPLR430, a(8)=>r7(8), a(7)=>r7(7), a(6)=>r7(6), a(5)=>
       r7(5), a(4)=>r7(4), a(3)=>r7(3), a(2)=>r7(2), a(1)=>r7(1), a(0)=>r7(0), 
       b(10)=>r8(10), b(9)=>r8(9), b(8)=>r8(8), b(7)=>r8(7), b(6)=>r8(6), 
       b(5)=>r8(5), b(4)=>r8(4), b(3)=>r8(3), b(2)=>r8(2), b(1)=>r8(1), b(0)
-      =>r8(0), d(10)=>add3(10), d(9)=>add3(9), d(8)=>add3(8), d(7)=>add3(7), 
-      d(6)=>add3(6), d(5)=>add3(5), d(4)=>add3(4), d(3)=>add3(3), d(2)=>
-      add3(2), d(1)=>add3(1), d(0)=>add3(0), cout=>DANGLING(0));
-   sub1_sub8_1 : sub_8u_8u_8u_0 port map ( cin=>debug_num_5_1_EXMPLR431, 
-      a(7)=>r1(7), a(6)=>r1(6), a(5)=>r1(5), a(4)=>r1(4), a(3)=>r1(3), a(2)
-      =>r1(2), a(1)=>r1(1), a(0)=>r1(0), b(7)=>r2(7), b(6)=>r2(6), b(5)=>
-      r2(5), b(4)=>r2(4), b(3)=>r2(3), b(2)=>r2(2), b(1)=>r2(1), b(0)=>r2(0), 
-      d(7)=>DANGLING(1), d(6)=>DANGLING(2), d(5)=>DANGLING(3), d(4)=>
-      DANGLING(4), d(3)=>DANGLING(5), d(2)=>DANGLING(6), d(1)=>DANGLING(7), 
-      d(0)=>DANGLING(8), cout=>rtlc7n260);
-   sub2_sub10_2 : sub_10u_10u_10u_0 port map ( cin=>debug_num_5_1_EXMPLR431, 
-      a(9)=>r9(9), a(8)=>r9(8), a(7)=>r9(7), a(6)=>r9(6), a(5)=>r9(5), a(4)
-      =>r9(4), a(3)=>r9(3), a(2)=>r9(2), a(1)=>r9(1), a(0)=>r9(0), b(9)=>
-      r11(9), b(8)=>r11(8), b(7)=>r11(7), b(6)=>r11(6), b(5)=>r11(5), b(4)=>
-      r11(4), b(3)=>r11(3), b(2)=>r11(2), b(1)=>r11(1), b(0)=>r11(0), d(9)=>
-      DANGLING(9), d(8)=>DANGLING(10), d(7)=>DANGLING(11), d(6)=>DANGLING(12
-      ), d(5)=>DANGLING(13), d(4)=>DANGLING(14), d(3)=>DANGLING(15), d(2)=>
-      DANGLING(16), d(1)=>DANGLING(17), d(0)=>DANGLING(18), cout=>rtlc7n294
-   );
-   sub3_sub10_3 : sub_10u_10u_10u_0 port map ( cin=>debug_num_5_1_EXMPLR431, 
-      a(9)=>r11(9), a(8)=>r11(8), a(7)=>r11(7), a(6)=>r11(6), a(5)=>r11(5), 
-      a(4)=>r11(4), a(3)=>r11(3), a(2)=>r11(2), a(1)=>r11(1), a(0)=>r11(0), 
-      b(9)=>r12(9), b(8)=>r12(8), b(7)=>r12(7), b(6)=>r12(6), b(5)=>r12(5), 
-      b(4)=>r12(4), b(3)=>r12(3), b(2)=>r12(2), b(1)=>r12(1), b(0)=>r12(0), 
-      d(9)=>DANGLING(19), d(8)=>DANGLING(20), d(7)=>DANGLING(21), d(6)=>
-      DANGLING(22), d(5)=>DANGLING(23), d(4)=>DANGLING(24), d(3)=>DANGLING(
-      25), d(2)=>DANGLING(26), d(1)=>DANGLING(27), d(0)=>DANGLING(28), cout
-      =>rtlc7n332);
-   rtlc11n44 <= i_valid AND rtlcs4 ;
-   rtlc11n52 <= rtlc11n44 AND rtlcs3 ;
-   rtlc17n0_17n1s3 <= sub4_7 AND sub4_8 ;
-   rtlc19n42 <= rtlcs5 AND not_v_0 ;
-   rtlc19n35 <= not_i_reset AND rtlcs6 ;
-   rtlc19n36 <= end_of_img OR rtlc19n35 ;
-   rtlc19n43 <= rtlc19n36 OR rtlc19n42 ;
-   not_i_reset <= NOT i_reset ;
-   not_rtlc20n268 <= NOT rtlc20n268 ;
-   rtlc20n282 <= rtlcs3 AND end_of_img ;
-   rtlc20n281 <= end_of_img AND not_rtlcs4 ;
-   rtlc20_54_or_19 : or_3u_3u port map ( a(2)=>i_reset, a(1)=>rtlc20n281, 
-      a(0)=>rtlc20n282, d=>rtlc20_X_0_n283);
-   not_end_of_img <= NOT end_of_img ;
-   t_inc2_20i2 : inc_2u_2u_0 port map ( cin=>debug_num_5_1_EXMPLR431, a(1)=>
-      t(1), a(0)=>t(0), d(1)=>t_20n2s2(1), d(0)=>t_20n2s2(0), cout=>DANGLING
-      (29));
-   not_v_6 <= NOT v(6) ;
-   rtlc26n59 <= v(6) AND rtlc26n207 ;
-   rtlc26n204 <= x(0) AND x(1) ;
-   rtlc26n206 <= o_row_EXMPLR435(1) AND rtlc26n205 ;
-   rtlc_52_and_23 : and_4u_4u port map ( a(3)=>not_i_reset, a(2)=>rtlcs4, 
+      =>r8(0), d(10)=>add3_22n4s1(10), d(9)=>add3_22n4s1(9), d(8)=>
+      add3_22n4s1(8), d(7)=>add3_22n4s1(7), d(6)=>add3_22n4s1(6), d(5)=>
+      add3_22n4s1(5), d(4)=>add3_22n4s1(4), d(3)=>add3_22n4s1(3), d(2)=>
+      add3_22n4s1(2), d(1)=>add3_22n4s1(1), d(0)=>add3_22n4s1(0), cout=>
+      DANGLING(1));
+   rtlc_50_and_20 : and_4u_4u port map ( a(3)=>not_i_reset, a(2)=>rtlcs4, 
       a(1)=>rtlcs3, a(0)=>not_end_of_img, d=>rtlcn2);
-   rtlc20n268 <= not_rtlcn169 OR rtlcn2 ;
-   c_mux_21i1Bus45_0 : mux_3u_3u port map ( a(2)=>q1(0), a(1)=>q3(0), a(0)=>
+   rtlc15n267 <= not_rtlcn165 OR rtlcn2 ;
+   c_mux_16i1Bus49_0 : mux_3u_3u port map ( a(2)=>q1(0), a(1)=>q3(0), a(0)=>
       q2(0), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      c_21n1ss1(0));
-   c_mux_21i1Bus45_1 : mux_3u_3u port map ( a(2)=>q1(1), a(1)=>q3(1), a(0)=>
+      c_16n1ss1(0));
+   c_mux_16i1Bus49_1 : mux_3u_3u port map ( a(2)=>q1(1), a(1)=>q3(1), a(0)=>
       q2(1), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      c_21n1ss1(1));
-   c_mux_21i1Bus45_2 : mux_3u_3u port map ( a(2)=>q1(2), a(1)=>q3(2), a(0)=>
+      c_16n1ss1(1));
+   c_mux_16i1Bus49_2 : mux_3u_3u port map ( a(2)=>q1(2), a(1)=>q3(2), a(0)=>
       q2(2), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      c_21n1ss1(2));
-   c_mux_21i1Bus45_3 : mux_3u_3u port map ( a(2)=>q1(3), a(1)=>q3(3), a(0)=>
+      c_16n1ss1(2));
+   c_mux_16i1Bus49_3 : mux_3u_3u port map ( a(2)=>q1(3), a(1)=>q3(3), a(0)=>
       q2(3), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      c_21n1ss1(3));
-   c_mux_21i1Bus45_4 : mux_3u_3u port map ( a(2)=>q1(4), a(1)=>q3(4), a(0)=>
+      c_16n1ss1(3));
+   c_mux_16i1Bus49_4 : mux_3u_3u port map ( a(2)=>q1(4), a(1)=>q3(4), a(0)=>
       q2(4), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      c_21n1ss1(4));
-   c_mux_21i1Bus45_5 : mux_3u_3u port map ( a(2)=>q1(5), a(1)=>q3(5), a(0)=>
+      c_16n1ss1(4));
+   c_mux_16i1Bus49_5 : mux_3u_3u port map ( a(2)=>q1(5), a(1)=>q3(5), a(0)=>
       q2(5), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      c_21n1ss1(5));
-   c_mux_21i1Bus45_6 : mux_3u_3u port map ( a(2)=>q1(6), a(1)=>q3(6), a(0)=>
+      c_16n1ss1(5));
+   c_mux_16i1Bus49_6 : mux_3u_3u port map ( a(2)=>q1(6), a(1)=>q3(6), a(0)=>
       q2(6), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      c_21n1ss1(6));
-   c_mux_21i1Bus45_7 : mux_3u_3u port map ( a(2)=>q1(7), a(1)=>q3(7), a(0)=>
+      c_16n1ss1(6));
+   c_mux_16i1Bus49_7 : mux_3u_3u port map ( a(2)=>q1(7), a(1)=>q3(7), a(0)=>
       q2(7), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      c_21n1ss1(7));
-   d_mux_21i9Bus46_0 : mux_3u_3u port map ( a(2)=>q2(0), a(1)=>q1(0), a(0)=>
+      c_16n1ss1(7));
+   d_mux_16i9Bus50_0 : mux_3u_3u port map ( a(2)=>q2(0), a(1)=>q1(0), a(0)=>
       q3(0), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      d_21n1ss1(0));
-   d_mux_21i9Bus46_1 : mux_3u_3u port map ( a(2)=>q2(1), a(1)=>q1(1), a(0)=>
+      d_16n1ss1(0));
+   d_mux_16i9Bus50_1 : mux_3u_3u port map ( a(2)=>q2(1), a(1)=>q1(1), a(0)=>
       q3(1), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      d_21n1ss1(1));
-   d_mux_21i9Bus46_2 : mux_3u_3u port map ( a(2)=>q2(2), a(1)=>q1(2), a(0)=>
+      d_16n1ss1(1));
+   d_mux_16i9Bus50_2 : mux_3u_3u port map ( a(2)=>q2(2), a(1)=>q1(2), a(0)=>
       q3(2), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      d_21n1ss1(2));
-   d_mux_21i9Bus46_3 : mux_3u_3u port map ( a(2)=>q2(3), a(1)=>q1(3), a(0)=>
+      d_16n1ss1(2));
+   d_mux_16i9Bus50_3 : mux_3u_3u port map ( a(2)=>q2(3), a(1)=>q1(3), a(0)=>
       q3(3), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      d_21n1ss1(3));
-   d_mux_21i9Bus46_4 : mux_3u_3u port map ( a(2)=>q2(4), a(1)=>q1(4), a(0)=>
+      d_16n1ss1(3));
+   d_mux_16i9Bus50_4 : mux_3u_3u port map ( a(2)=>q2(4), a(1)=>q1(4), a(0)=>
       q3(4), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      d_21n1ss1(4));
-   d_mux_21i9Bus46_5 : mux_3u_3u port map ( a(2)=>q2(5), a(1)=>q1(5), a(0)=>
+      d_16n1ss1(4));
+   d_mux_16i9Bus50_5 : mux_3u_3u port map ( a(2)=>q2(5), a(1)=>q1(5), a(0)=>
       q3(5), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      d_21n1ss1(5));
-   d_mux_21i9Bus46_6 : mux_3u_3u port map ( a(2)=>q2(6), a(1)=>q1(6), a(0)=>
+      d_16n1ss1(5));
+   d_mux_16i9Bus50_6 : mux_3u_3u port map ( a(2)=>q2(6), a(1)=>q1(6), a(0)=>
       q3(6), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      d_21n1ss1(6));
-   d_mux_21i9Bus46_7 : mux_3u_3u port map ( a(2)=>q2(7), a(1)=>q1(7), a(0)=>
+      d_16n1ss1(6));
+   d_mux_16i9Bus50_7 : mux_3u_3u port map ( a(2)=>q2(7), a(1)=>q1(7), a(0)=>
       q3(7), b(2)=>debug_num_5_0_EXMPLR430, b(1)=>t(1), b(0)=>t(0), d=>
-      d_21n1ss1(7));
-   not_rtlc19n43 <= NOT rtlc19n43 ;
-   sub1_8 <= NOT rtlc7n260 ;
+      d_16n1ss1(7));
+   not_rtlc14n43 <= NOT rtlc14n43 ;
+   not_sub1_8 <= NOT sub1_8 ;
+   not_sub2_10 <= NOT sub2_10 ;
    rtlcn140 <= rtlcs4 AND rtlcs3 ;
-   not_rtlc7n294 <= NOT rtlc7n294 ;
-   rtlcn143 <= not_rtlc7n294 AND rtlc23n83 ;
-   rtlcn147 <= rtlc7n294 AND v(4) ;
-   not_rtlcn158 <= NOT rtlcn158 ;
-   max1(0) <= r1(0) when rtlc7n260 = '1' else r2(0) ;
-   max1(1) <= r1(1) when rtlc7n260 = '1' else r2(1) ;
-   max1(2) <= r1(2) when rtlc7n260 = '1' else r2(2) ;
-   max1(3) <= r1(3) when rtlc7n260 = '1' else r2(3) ;
-   max1(4) <= r1(4) when rtlc7n260 = '1' else r2(4) ;
-   max1(5) <= r1(5) when rtlc7n260 = '1' else r2(5) ;
-   max1(6) <= r1(6) when rtlc7n260 = '1' else r2(6) ;
-   max1(7) <= r1(7) when rtlc7n260 = '1' else r2(7) ;
-   max2(0) <= r9(0) when rtlc7n294 = '1' else r11(0) ;
-   max2(1) <= r9(1) when rtlc7n294 = '1' else r11(1) ;
-   max2(2) <= r9(2) when rtlc7n294 = '1' else r11(2) ;
-   max2(3) <= r9(3) when rtlc7n294 = '1' else r11(3) ;
-   max2(4) <= r9(4) when rtlc7n294 = '1' else r11(4) ;
-   max2(5) <= r9(5) when rtlc7n294 = '1' else r11(5) ;
-   max2(6) <= r9(6) when rtlc7n294 = '1' else r11(6) ;
-   max2(7) <= r9(7) when rtlc7n294 = '1' else r11(7) ;
-   max2(8) <= r9(8) when rtlc7n294 = '1' else r11(8) ;
-   max2(9) <= r9(9) when rtlc7n294 = '1' else r11(9) ;
-   max3(0) <= r11(0) when rtlc7n332 = '1' else r12(0) ;
-   max3(1) <= r11(1) when rtlc7n332 = '1' else r12(1) ;
-   max3(2) <= r11(2) when rtlc7n332 = '1' else r12(2) ;
-   max3(3) <= r11(3) when rtlc7n332 = '1' else r12(3) ;
-   max3(4) <= r11(4) when rtlc7n332 = '1' else r12(4) ;
-   max3(5) <= r11(5) when rtlc7n332 = '1' else r12(5) ;
-   max3(6) <= r11(6) when rtlc7n332 = '1' else r12(6) ;
-   max3(7) <= r11(7) when rtlc7n332 = '1' else r12(7) ;
-   max3(8) <= r11(8) when rtlc7n332 = '1' else r12(8) ;
-   max3(9) <= r11(9) when rtlc7n332 = '1' else r12(9) ;
-   rtlc20n212 <= not_rtlcn158 when rtlcs4 = '1' else not_end_of_img ;
-   dir5_23n5ss1_2 <= dir1_2 when rtlc7n294 = '1' else dir2_2 ;
-   dir6_23n5ss1_2 <= dir5(2) when rtlc7n294 = '1' else dir3_2 ;
-   dir7_24n3ss1(0) <= dir4_0 when rtlc7n332 = '1' else dir6(0) ;
-   dir7_24n3ss1(2) <= dir4_2 when rtlc7n332 = '1' else dir6(2) ;
-   r8_25n1ss1(0) <= r7(0) when v(2) = '1' else add3(0) ;
-   r8_25n1ss1(1) <= r7(1) when v(2) = '1' else add3(1) ;
-   r8_25n1ss1(2) <= r7(2) when v(2) = '1' else add3(2) ;
-   r8_25n1ss1(3) <= r7(3) when v(2) = '1' else add3(3) ;
-   r8_25n1ss1(4) <= r7(4) when v(2) = '1' else add3(4) ;
-   r8_25n1ss1(5) <= r7(5) when v(2) = '1' else add3(5) ;
-   r8_25n1ss1(6) <= r7(6) when v(2) = '1' else add3(6) ;
-   r8_25n1ss1(7) <= r7(7) when v(2) = '1' else add3(7) ;
-   r8_25n1ss1(8) <= r7(8) when v(2) = '1' else add3(8) ;
-   r9_25n4ss1(0) <= add2(0) when v(2) = '1' else max2(0) ;
-   r9_25n4ss1(1) <= add2(1) when v(2) = '1' else max2(1) ;
-   r9_25n4ss1(2) <= add2(2) when v(2) = '1' else max2(2) ;
-   r9_25n4ss1(3) <= add2(3) when v(2) = '1' else max2(3) ;
-   r9_25n4ss1(4) <= add2(4) when v(2) = '1' else max2(4) ;
-   r9_25n4ss1(5) <= add2(5) when v(2) = '1' else max2(5) ;
-   r9_25n4ss1(6) <= add2(6) when v(2) = '1' else max2(6) ;
-   r9_25n4ss1(7) <= add2(7) when v(2) = '1' else max2(7) ;
-   r9_25n4ss1(8) <= add2(8) when v(2) = '1' else max2(8) ;
-   r9_25n4ss1(9) <= add2(9) when v(2) = '1' else max2(9) ;
-   not_rtlc20n212 <= NOT rtlc20n212 ;
-   rtlc20n332 <= v(2) AND not_rtlc20n212 ;
-   rtlc20n331 <= v(2) AND rtlcs4 ;
+   rtlcn141 <= sub2_10 AND rtlc18n83 ;
+   rtlcn145 <= not_sub2_10 AND v(4) ;
+   not_rtlcn154 <= NOT rtlcn154 ;
+   rtlc15n211 <= not_rtlcn154 when rtlcs4 = '1' else not_end_of_img ;
+   dir5_18n5ss1_2 <= dir2_2 when sub2_10 = '1' else dir1_2 ;
+   dir6_18n5ss1_2 <= dir3_2 when sub2_10 = '1' else dir5(2) ;
+   dir7_19n3ss1(0) <= dir6(0) when sub3_10 = '1' else dir4_0 ;
+   dir7_19n3ss1(2) <= dir6(2) when sub3_10 = '1' else dir4_2 ;
+   r8_20n1ss1(0) <= r7(0) when v(2) = '1' else add3(0) ;
+   r8_20n1ss1(1) <= r7(1) when v(2) = '1' else add3(1) ;
+   r8_20n1ss1(2) <= r7(2) when v(2) = '1' else add3(2) ;
+   r8_20n1ss1(3) <= r7(3) when v(2) = '1' else add3(3) ;
+   r8_20n1ss1(4) <= r7(4) when v(2) = '1' else add3(4) ;
+   r8_20n1ss1(5) <= r7(5) when v(2) = '1' else add3(5) ;
+   r8_20n1ss1(6) <= r7(6) when v(2) = '1' else add3(6) ;
+   r8_20n1ss1(7) <= r7(7) when v(2) = '1' else add3(7) ;
+   r8_20n1ss1(8) <= r7(8) when v(2) = '1' else add3(8) ;
+   r9_20n4ss1(0) <= add2(0) when v(2) = '1' else max2(0) ;
+   r9_20n4ss1(1) <= add2(1) when v(2) = '1' else max2(1) ;
+   r9_20n4ss1(2) <= add2(2) when v(2) = '1' else max2(2) ;
+   r9_20n4ss1(3) <= add2(3) when v(2) = '1' else max2(3) ;
+   r9_20n4ss1(4) <= add2(4) when v(2) = '1' else max2(4) ;
+   r9_20n4ss1(5) <= add2(5) when v(2) = '1' else max2(5) ;
+   r9_20n4ss1(6) <= add2(6) when v(2) = '1' else max2(6) ;
+   r9_20n4ss1(7) <= add2(7) when v(2) = '1' else max2(7) ;
+   r9_20n4ss1(8) <= add2(8) when v(2) = '1' else max2(8) ;
+   r9_20n4ss1(9) <= add2(9) when v(2) = '1' else max2(9) ;
+   max1_22n1ss1(0) <= r2(0) when sub1_8 = '1' else r1(0) ;
+   max1_22n1ss1(1) <= r2(1) when sub1_8 = '1' else r1(1) ;
+   max1_22n1ss1(2) <= r2(2) when sub1_8 = '1' else r1(2) ;
+   max1_22n1ss1(3) <= r2(3) when sub1_8 = '1' else r1(3) ;
+   max1_22n1ss1(4) <= r2(4) when sub1_8 = '1' else r1(4) ;
+   max1_22n1ss1(5) <= r2(5) when sub1_8 = '1' else r1(5) ;
+   max1_22n1ss1(6) <= r2(6) when sub1_8 = '1' else r1(6) ;
+   max1_22n1ss1(7) <= r2(7) when sub1_8 = '1' else r1(7) ;
+   max2_22n2ss1(0) <= r11(0) when sub2_10 = '1' else r9(0) ;
+   max2_22n2ss1(1) <= r11(1) when sub2_10 = '1' else r9(1) ;
+   max2_22n2ss1(2) <= r11(2) when sub2_10 = '1' else r9(2) ;
+   max2_22n2ss1(3) <= r11(3) when sub2_10 = '1' else r9(3) ;
+   max2_22n2ss1(4) <= r11(4) when sub2_10 = '1' else r9(4) ;
+   max2_22n2ss1(5) <= r11(5) when sub2_10 = '1' else r9(5) ;
+   max2_22n2ss1(6) <= r11(6) when sub2_10 = '1' else r9(6) ;
+   max2_22n2ss1(7) <= r11(7) when sub2_10 = '1' else r9(7) ;
+   max2_22n2ss1(8) <= r11(8) when sub2_10 = '1' else r9(8) ;
+   max2_22n2ss1(9) <= r11(9) when sub2_10 = '1' else r9(9) ;
+   max3_22n3ss1(0) <= r12(0) when sub3_10 = '1' else r11(0) ;
+   max3_22n3ss1(1) <= r12(1) when sub3_10 = '1' else r11(1) ;
+   max3_22n3ss1(2) <= r12(2) when sub3_10 = '1' else r11(2) ;
+   max3_22n3ss1(3) <= r12(3) when sub3_10 = '1' else r11(3) ;
+   max3_22n3ss1(4) <= r12(4) when sub3_10 = '1' else r11(4) ;
+   max3_22n3ss1(5) <= r12(5) when sub3_10 = '1' else r11(5) ;
+   max3_22n3ss1(6) <= r12(6) when sub3_10 = '1' else r11(6) ;
+   max3_22n3ss1(7) <= r12(7) when sub3_10 = '1' else r11(7) ;
+   max3_22n3ss1(8) <= r12(8) when sub3_10 = '1' else r11(8) ;
+   max3_22n3ss1(9) <= r12(9) when sub3_10 = '1' else r11(9) ;
+   not_rtlc15n211 <= NOT rtlc15n211 ;
+   rtlc15n331 <= i_valid AND not_rtlc15n211 ;
    not_rtlcs4 <= NOT rtlcs4 ;
    not_rtlcs7 <= NOT rtlcs7 ;
-   rtlc21n169 <= i_valid AND not_rtlcs7 ;
-   rtlcn160 <= v(2) OR v(1) ;
+   rtlc16n169 <= i_valid AND not_rtlcs7 ;
+   rtlcn156 <= v(1) OR v(2) ;
    not_v_3 <= NOT v(3) ;
-   not_rtlcn160 <= NOT rtlcn160 ;
-   rtlc_773_and_40 : and_3u_3u port map ( a(2)=>not_v_3, a(1)=>v(4), a(0)=>
-      not_rtlcn160, d=>rtlc22n182);
-   rtlc22n179 <= v(3) AND not_rtlcn160 ;
+   not_rtlcn156 <= NOT rtlcn156 ;
+   rtlc_744_and_37 : and_3u_3u port map ( a(2)=>not_v_3, a(1)=>v(4), a(0)=>
+      not_rtlcn156, d=>rtlc17n182);
+   rtlc17n179 <= v(3) AND not_rtlcn156 ;
    not_v_1 <= NOT v(1) ;
-   rtlc22n176 <= v(2) AND not_v_1 ;
+   rtlc17n176 <= not_v_1 AND v(2) ;
    not_v_4 <= NOT v(4) ;
-   rtlc23n83 <= not_v_4 AND v(5) ;
-   not_rtlc24n41 <= NOT rtlc24n41 ;
-   rtlcn167 <= not_v_3 AND v(4) ;
-   rtlcn159 <= v(2) OR rtlcn167 ;
+   rtlc18n83 <= not_v_4 AND v(5) ;
+   rtlcn163 <= not_v_3 AND v(4) ;
+   rtlcn155 <= v(2) OR rtlcn163 ;
    not_v_0 <= NOT v(0) ;
-   rtlc_783_and_41 : and_3u_3u port map ( a(2)=>not_v_1, a(1)=>not_v_0, a(0)
-      =>rtlcn159, d=>rtlc25n236);
-   rtlc_784_or_42 : or_3u_3u port map ( a(2)=>v(0), a(1)=>v(3), a(0)=>
-      rtlcn160, d=>rtlc25n226);
-   not_rtlcn169 <= NOT rtlcn169 ;
-   rtlc_789_and_43 : and_8u_8u port map ( a(7)=>x(7), a(6)=>x(6), a(5)=>x(5), 
+   rtlc_754_and_38 : and_3u_3u port map ( a(2)=>not_v_1, a(1)=>not_v_0, a(0)
+      =>rtlcn155, d=>rtlc20n236);
+   rtlc_755_or_39 : or_3u_3u port map ( a(2)=>v(0), a(1)=>v(3), a(0)=>
+      rtlcn156, d=>rtlc20n226);
+   not_rtlcn165 <= NOT rtlcn165 ;
+   rtlc_760_and_40 : and_8u_8u port map ( a(7)=>x(7), a(6)=>x(6), a(5)=>x(5), 
       a(4)=>x(4), a(3)=>x(3), a(2)=>x(2), a(1)=>x(1), a(0)=>x(0), d=>rtlcs4
    );
-   rtlc_790_and_44 : and_8u_8u port map ( a(7)=>o_row_EXMPLR435(7), a(6)=>
+   rtlc_761_and_41 : and_8u_8u port map ( a(7)=>o_row_EXMPLR435(7), a(6)=>
       o_row_EXMPLR435(6), a(5)=>o_row_EXMPLR435(5), a(4)=>o_row_EXMPLR435(4), 
       a(3)=>o_row_EXMPLR435(3), a(2)=>o_row_EXMPLR435(2), a(1)=>
       o_row_EXMPLR435(1), a(0)=>o_row_EXMPLR435(0), d=>rtlcs3);
-   rtlcn158 <= end_of_img OR rtlcs3 ;
+   rtlcn154 <= end_of_img OR rtlcs3 ;
    not_rtlc11n52 <= NOT rtlc11n52 ;
    addr_x(0) <= x(0) AND not_rtlc11n52 ;
    addr_x(1) <= x(1) AND not_rtlc11n52 ;
@@ -2295,77 +2286,100 @@ begin
    addr_t(1) <= t(1) AND not_rtlc11n52 ;
    addr_t(0) <= t(0) AND not_rtlc11n52 ;
    not_addr_t_1 <= NOT addr_t(1) ;
+   wren_m2 <= i_valid AND rtlcs1 ;
    not_addr_t_0 <= NOT addr_t(0) ;
    wren_m1 <= i_valid AND rtlcs0 ;
    wren_m3 <= i_valid AND rtlcs2 ;
-   wren_m2 <= i_valid AND rtlcs1 ;
-   sub4_7 <= rtlc16n0_16n1s2_7 AND v(7) ;
-   sub4_8 <= rtlc16n0_16n1s2_8 AND v(7) ;
-   sub4_12 <= rtlc16n0_16n1s2_12 AND v(7) ;
-   sub4_11 <= rtlc16n0_16n1s2_11 AND v(7) ;
-   sub4_10 <= rtlc16n0_16n1s2_10 AND v(7) ;
-   sub4_9 <= rtlc16n0_16n1s2_9 AND v(7) ;
-   sub4_13 <= rtlc16n0_16n1s2_13 AND v(7) ;
-   not_sub4_13 <= NOT sub4_13 ;
-   o_edge_EXMPLR416 <= rtlc17n0_17n1s2 AND not_sub4_13 ;
-   rtlc24n41 <= not_v_6 AND rtlc7n332 ;
-   o_dir(0) <= dir7(0) AND o_edge_EXMPLR416 ;
-   not_rtlc7n332 <= NOT rtlc7n332 ;
-   dir7_24n3ss1(1) <= dir6(1) AND not_rtlc7n332 ;
-   o_dir(1) <= dir7(1) AND o_edge_EXMPLR416 ;
-   o_dir(2) <= dir7(2) AND o_edge_EXMPLR416 ;
+   o_dir(0) <= dir7(0) AND rtlc13n17 ;
+   dir7_19n3ss1(1) <= dir6(1) AND sub3_10 ;
+   o_dir(1) <= dir7(1) AND rtlc13n17 ;
+   o_dir(2) <= dir7(2) AND rtlc13n17 ;
    not_o_mode_1 <= NOT o_mode_EXMPLR434(1) ;
    not_o_mode_0 <= NOT o_mode_EXMPLR434(0) ;
-   rtlcn169 <= i_reset OR v(2) ;
+   rtlcn165 <= i_reset OR i_valid ;
+   rtlcs1 <= not_addr_t_1 AND addr_t(0) ;
    rtlcs0 <= not_addr_t_1 AND not_addr_t_0 ;
    rtlcs2 <= addr_t(1) AND not_addr_t_0 ;
-   rtlcs1 <= not_addr_t_1 AND addr_t(0) ;
    rtlcs7 <= t(1) AND t(0) ;
    rtlcs6 <= not_o_mode_1 AND o_mode_EXMPLR434(0) ;
    rtlcs5 <= o_mode_EXMPLR434(1) AND not_o_mode_0 ;
+   rtlcn381 <= v(6) OR sub3_10 ;
    modgen_counter_x : counter_up_cnt_en_sclear_clock_0_8 port map ( clock=>
       i_clock, q(7)=>x(7), q(6)=>x(6), q(5)=>x(5), q(4)=>x(4), q(3)=>x(3), 
       q(2)=>x(2), q(1)=>x(1), q(0)=>x(0), clk_en=>debug_num_5_1_EXMPLR431, 
       aclear=>debug_num_5_0_EXMPLR430, sload=>debug_num_5_0_EXMPLR430, 
-      data(7)=>DANGLING(30), data(6)=>DANGLING(31), data(5)=>DANGLING(32), 
-      data(4)=>DANGLING(33), data(3)=>DANGLING(34), data(2)=>DANGLING(35), 
-      data(1)=>DANGLING(36), data(0)=>DANGLING(37), aset=>
+      data(7)=>DANGLING(2), data(6)=>DANGLING(3), data(5)=>DANGLING(4), 
+      data(4)=>DANGLING(5), data(3)=>DANGLING(6), data(2)=>DANGLING(7), 
+      data(1)=>DANGLING(8), data(0)=>DANGLING(9), aset=>
       debug_num_5_0_EXMPLR430, sclear=>i_reset, updn=>
-      debug_num_5_1_EXMPLR431, cnt_en=>v(2));
+      debug_num_5_1_EXMPLR431, cnt_en=>i_valid);
    modgen_counter_o_row : counter_up_cnt_en_sclear_clock_clk_en_0_8
        port map ( clock=>i_clock, q(7)=>o_row_EXMPLR435(7), q(6)=>
       o_row_EXMPLR435(6), q(5)=>o_row_EXMPLR435(5), q(4)=>o_row_EXMPLR435(4), 
       q(3)=>o_row_EXMPLR435(3), q(2)=>o_row_EXMPLR435(2), q(1)=>
-      o_row_EXMPLR435(1), q(0)=>o_row_EXMPLR435(0), clk_en=>not_rtlc20n268, 
+      o_row_EXMPLR435(1), q(0)=>o_row_EXMPLR435(0), clk_en=>not_rtlc15n267, 
       aclear=>debug_num_5_0_EXMPLR430, sload=>debug_num_5_0_EXMPLR430, 
-      data(7)=>DANGLING(38), data(6)=>DANGLING(39), data(5)=>DANGLING(40), 
-      data(4)=>DANGLING(41), data(3)=>DANGLING(42), data(2)=>DANGLING(43), 
-      data(1)=>DANGLING(44), data(0)=>DANGLING(45), aset=>
-      debug_num_5_0_EXMPLR430, sclear=>rtlc20_X_0_n283, updn=>
+      data(7)=>DANGLING(10), data(6)=>DANGLING(11), data(5)=>DANGLING(12), 
+      data(4)=>DANGLING(13), data(3)=>DANGLING(14), data(2)=>DANGLING(15), 
+      data(1)=>DANGLING(16), data(0)=>DANGLING(17), aset=>
+      debug_num_5_0_EXMPLR430, sclear=>rtlc15_X_0_n282, updn=>
       debug_num_5_1_EXMPLR431, cnt_en=>rtlcs4);
-   add1_add8_4 : add_8u_8u_8u_0_0 port map ( cin=>debug_num_5_0_EXMPLR430, 
-      a(7)=>r3(7), a(6)=>r3(6), a(5)=>r3(5), a(4)=>r3(4), a(3)=>r3(3), a(2)
-      =>r3(2), a(1)=>r3(1), a(0)=>r3(0), b(7)=>r4(7), b(6)=>r4(6), b(5)=>
-      r4(5), b(4)=>r4(4), b(3)=>r4(3), b(2)=>r4(2), b(1)=>r4(1), b(0)=>r4(0), 
-      d(7)=>add1(7), d(6)=>add1(6), d(5)=>add1(5), d(4)=>add1(4), d(3)=>
-      add1(3), d(2)=>add1(2), d(1)=>add1(1), d(0)=>add1(0), cout=>add1(8));
-   add2_add9_5 : add_9u_9u_9u_0_0 port map ( cin=>debug_num_5_0_EXMPLR430, 
-      a(8)=>debug_num_5_0_EXMPLR430, a(7)=>r5(7), a(6)=>r5(6), a(5)=>r5(5), 
-      a(4)=>r5(4), a(3)=>r5(3), a(2)=>r5(2), a(1)=>r5(1), a(0)=>r5(0), b(8)
-      =>r7(8), b(7)=>r7(7), b(6)=>r7(6), b(5)=>r7(5), b(4)=>r7(4), b(3)=>
-      r7(3), b(2)=>r7(2), b(1)=>r7(1), b(0)=>r7(0), d(8)=>add2(8), d(7)=>
-      add2(7), d(6)=>add2(6), d(5)=>add2(5), d(4)=>add2(4), d(3)=>add2(3), 
-      d(2)=>add2(2), d(1)=>add2(1), d(0)=>add2(0), cout=>add2(9));
-   add4_add11_6 : add_11u_11u_11u_0_0 port map ( cin=>
+   sub1_22n1s1_8 <= NOT rtlcn637 ;
+   sub1_sub8_22i30 : sub_8u_8u_8u_0 port map ( cin=>debug_num_5_1_EXMPLR431, 
+      a(7)=>r1(7), a(6)=>r1(6), a(5)=>r1(5), a(4)=>r1(4), a(3)=>r1(3), a(2)
+      =>r1(2), a(1)=>r1(1), a(0)=>r1(0), b(7)=>r2(7), b(6)=>r2(6), b(5)=>
+      r2(5), b(4)=>r2(4), b(3)=>r2(3), b(2)=>r2(2), b(1)=>r2(1), b(0)=>r2(0), 
+      d(7)=>DANGLING(18), d(6)=>DANGLING(19), d(5)=>DANGLING(20), d(4)=>
+      DANGLING(21), d(3)=>DANGLING(22), d(2)=>DANGLING(23), d(1)=>DANGLING(
+      24), d(0)=>DANGLING(25), cout=>rtlcn637);
+   add1_add8_22i31 : add_8u_8u_8u_0_0 port map ( cin=>
+      debug_num_5_0_EXMPLR430, a(7)=>r3(7), a(6)=>r3(6), a(5)=>r3(5), a(4)=>
+      r3(4), a(3)=>r3(3), a(2)=>r3(2), a(1)=>r3(1), a(0)=>r3(0), b(7)=>r4(7), 
+      b(6)=>r4(6), b(5)=>r4(5), b(4)=>r4(4), b(3)=>r4(3), b(2)=>r4(2), b(1)
+      =>r4(1), b(0)=>r4(0), d(7)=>add1_22n4s1(7), d(6)=>add1_22n4s1(6), d(5)
+      =>add1_22n4s1(5), d(4)=>add1_22n4s1(4), d(3)=>add1_22n4s1(3), d(2)=>
+      add1_22n4s1(2), d(1)=>add1_22n4s1(1), d(0)=>add1_22n4s1(0), cout=>
+      add1_22n4s1(8));
+   add2_add9_22i32 : add_9u_9u_9u_0_0 port map ( cin=>
+      debug_num_5_0_EXMPLR430, a(8)=>debug_num_5_0_EXMPLR430, a(7)=>r5(7), 
+      a(6)=>r5(6), a(5)=>r5(5), a(4)=>r5(4), a(3)=>r5(3), a(2)=>r5(2), a(1)
+      =>r5(1), a(0)=>r5(0), b(8)=>r7(8), b(7)=>r7(7), b(6)=>r7(6), b(5)=>
+      r7(5), b(4)=>r7(4), b(3)=>r7(3), b(2)=>r7(2), b(1)=>r7(1), b(0)=>r7(0), 
+      d(8)=>add2_22n4s1(8), d(7)=>add2_22n4s1(7), d(6)=>add2_22n4s1(6), d(5)
+      =>add2_22n4s1(5), d(4)=>add2_22n4s1(4), d(3)=>add2_22n4s1(3), d(2)=>
+      add2_22n4s1(2), d(1)=>add2_22n4s1(1), d(0)=>add2_22n4s1(0), cout=>
+      add2_22n4s1(9));
+   sub2_22n2s1_10 <= NOT rtlcn708 ;
+   sub2_sub10_22i33 : sub_10u_10u_10u_0 port map ( cin=>
+      debug_num_5_1_EXMPLR431, a(9)=>r9(9), a(8)=>r9(8), a(7)=>r9(7), a(6)=>
+      r9(6), a(5)=>r9(5), a(4)=>r9(4), a(3)=>r9(3), a(2)=>r9(2), a(1)=>r9(1), 
+      a(0)=>r9(0), b(9)=>r11(9), b(8)=>r11(8), b(7)=>r11(7), b(6)=>r11(6), 
+      b(5)=>r11(5), b(4)=>r11(4), b(3)=>r11(3), b(2)=>r11(2), b(1)=>r11(1), 
+      b(0)=>r11(0), d(9)=>DANGLING(26), d(8)=>DANGLING(27), d(7)=>DANGLING(
+      28), d(6)=>DANGLING(29), d(5)=>DANGLING(30), d(4)=>DANGLING(31), d(3)
+      =>DANGLING(32), d(2)=>DANGLING(33), d(1)=>DANGLING(34), d(0)=>DANGLING
+      (35), cout=>rtlcn708);
+   sub3_22n3s1_10 <= NOT rtlcn746 ;
+   sub3_sub10_22i34 : sub_10u_10u_10u_0 port map ( cin=>
+      debug_num_5_1_EXMPLR431, a(9)=>r11(9), a(8)=>r11(8), a(7)=>r11(7), 
+      a(6)=>r11(6), a(5)=>r11(5), a(4)=>r11(4), a(3)=>r11(3), a(2)=>r11(2), 
+      a(1)=>r11(1), a(0)=>r11(0), b(9)=>r12(9), b(8)=>r12(8), b(7)=>r12(7), 
+      b(6)=>r12(6), b(5)=>r12(5), b(4)=>r12(4), b(3)=>r12(3), b(2)=>r12(2), 
+      b(1)=>r12(1), b(0)=>r12(0), d(9)=>DANGLING(36), d(8)=>DANGLING(37), 
+      d(7)=>DANGLING(38), d(6)=>DANGLING(39), d(5)=>DANGLING(40), d(4)=>
+      DANGLING(41), d(3)=>DANGLING(42), d(2)=>DANGLING(43), d(1)=>DANGLING(
+      44), d(0)=>DANGLING(45), cout=>rtlcn746);
+   add4_add11_22i35 : add_11u_11u_11u_0_0 port map ( cin=>
       debug_num_5_0_EXMPLR430, a(10)=>debug_num_5_0_EXMPLR430, a(9)=>r13(10), 
       a(8)=>r13(9), a(7)=>r13(8), a(6)=>r13(7), a(5)=>r13(6), a(4)=>r13(5), 
       a(3)=>r13(4), a(2)=>r13(3), a(1)=>r13(2), a(0)=>r13(1), b(10)=>r13(10), 
       b(9)=>r13(9), b(8)=>r13(8), b(7)=>r13(7), b(6)=>r13(6), b(5)=>r13(5), 
       b(4)=>r13(4), b(3)=>r13(3), b(2)=>r13(2), b(1)=>r13(1), b(0)=>r13(0), 
-      d(10)=>add4(11), d(9)=>add4(10), d(8)=>add4(9), d(7)=>add4(8), d(6)=>
-      add4(7), d(5)=>add4(6), d(4)=>add4(5), d(3)=>add4(4), d(2)=>add4(3), 
-      d(1)=>add4(2), d(0)=>add4(1), cout=>add4(12));
-   rtlc16n0_16n1s2_13 <= NOT rtlcn666 ;
+      d(10)=>add4_22n4s1(11), d(9)=>add4_22n4s1(10), d(8)=>add4_22n4s1(9), 
+      d(7)=>add4_22n4s1(8), d(6)=>add4_22n4s1(7), d(5)=>add4_22n4s1(6), d(4)
+      =>add4_22n4s1(5), d(3)=>add4_22n4s1(4), d(2)=>add4_22n4s1(3), d(1)=>
+      add4_22n4s1(2), d(0)=>add4_22n4s1(1), cout=>add4_22n4s1(12));
+   sub4_22n4s1_13 <= NOT rtlcn811 ;
    DFFPC (v(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,v(1))
     ;
    DFFRSE (i_valid,debug_num_5_0_EXMPLR430,i_reset,debug_num_5_1_EXMPLR431,
@@ -2384,46 +2398,46 @@ begin
     ;
    DFFRSE (debug_num_5_1_EXMPLR431,debug_num_5_0_EXMPLR430,i_reset,
    debug_num_5_1_EXMPLR431,i_clock,o_mode_EXMPLR434(1)) ;
-   DFFRSE (not_rtlc19n43,i_reset,debug_num_5_0_EXMPLR430,
+   DFFRSE (not_rtlc14n43,i_reset,debug_num_5_0_EXMPLR430,
    debug_num_5_1_EXMPLR431,i_clock,o_mode_EXMPLR434(0)) ;
-   DFFRSE (rtlcn140,debug_num_5_0_EXMPLR430,i_reset,rtlc20n332,i_clock,
+   DFFRSE (rtlcn140,debug_num_5_0_EXMPLR430,i_reset,rtlc15n331,i_clock,
    end_of_img) ;
-   DFFRSE (t_20n2s1(1),debug_num_5_0_EXMPLR430,i_reset,rtlc20n331,i_clock,
+   DFFRSE (t_15n2s1(1),debug_num_5_0_EXMPLR430,i_reset,rtlc11n44,i_clock,
    t(1)) ;
-   DFFRSE (t_20n2s1(0),debug_num_5_0_EXMPLR430,i_reset,rtlc20n331,i_clock,
+   DFFRSE (t_15n2s1(0),debug_num_5_0_EXMPLR430,i_reset,rtlc11n44,i_clock,
    t(0)) ;
-   DFFPCE (d_21n1ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,d(7)) ;
-   DFFPCE (d_21n1ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,d(6)) ;
-   DFFPCE (d_21n1ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,d(5)) ;
-   DFFPCE (d_21n1ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,d(4)) ;
-   DFFPCE (d_21n1ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,d(3)) ;
-   DFFPCE (d_21n1ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,d(2)) ;
-   DFFPCE (d_21n1ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,d(1)) ;
-   DFFPCE (d_21n1ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,d(0)) ;
-   DFFPCE (c_21n1ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,c(7)) ;
-   DFFPCE (c_21n1ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,c(6)) ;
-   DFFPCE (c_21n1ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,c(5)) ;
-   DFFPCE (c_21n1ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,c(4)) ;
-   DFFPCE (c_21n1ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,c(3)) ;
-   DFFPCE (c_21n1ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,c(2)) ;
-   DFFPCE (c_21n1ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,c(1)) ;
-   DFFPCE (c_21n1ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc21n169,i_clock,c(0)) ;
+   DFFPCE (d_16n1ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,d(7)) ;
+   DFFPCE (d_16n1ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,d(6)) ;
+   DFFPCE (d_16n1ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,d(5)) ;
+   DFFPCE (d_16n1ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,d(4)) ;
+   DFFPCE (d_16n1ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,d(3)) ;
+   DFFPCE (d_16n1ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,d(2)) ;
+   DFFPCE (d_16n1ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,d(1)) ;
+   DFFPCE (d_16n1ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,d(0)) ;
+   DFFPCE (c_16n1ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,c(7)) ;
+   DFFPCE (c_16n1ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,c(6)) ;
+   DFFPCE (c_16n1ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,c(5)) ;
+   DFFPCE (c_16n1ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,c(4)) ;
+   DFFPCE (c_16n1ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,c(3)) ;
+   DFFPCE (c_16n1ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,c(2)) ;
+   DFFPCE (c_16n1ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,c(1)) ;
+   DFFPCE (c_16n1ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc16n169,i_clock,c(0)) ;
    DFFPCE (i_pixel(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_valid,i_clock,e(7)) ;
    DFFPCE (i_pixel(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
@@ -2536,133 +2550,133 @@ begin
    i_clock,a(1)) ;
    DFFPCE (b(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_valid,
    i_clock,a(0)) ;
-   DFFPCE (sub1_8,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,rtlc22n182,
+   DFFPCE (sub1_8,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,rtlc17n182,
    i_clock,dir4_2) ;
-   DFFPCE (rtlc7n260,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc22n182,i_clock,dir4_0) ;
-   DFFPCE (sub1_8,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,rtlc22n179,
+   DFFPCE (not_sub1_8,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc17n182,i_clock,dir4_0) ;
+   DFFPCE (sub1_8,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,rtlc17n179,
    i_clock,dir3_2) ;
-   DFFPCE (sub1_8,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,rtlc22n176,
+   DFFPCE (sub1_8,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,rtlc17n176,
    i_clock,dir2_2) ;
    DFFPCE (sub1_8,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,v(1),
    i_clock,dir1_2) ;
-   DFFPCE (dir6_23n5ss1_2,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc23n83,i_clock,dir6(2)) ;
-   DFFPCE (dir5_23n5ss1_2,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPCE (dir6_18n5ss1_2,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc18n83,i_clock,dir6(2)) ;
+   DFFPCE (dir5_18n5ss1_2,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    v(4),i_clock,dir5(2)) ;
-   DFFPCE (rtlc7n294,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,v(4),
+   DFFPCE (not_sub2_10,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,v(4),
    i_clock,dir5(1)) ;
-   DFFPCE (dir7_24n3ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   not_rtlc24n41,i_clock,dir7(2)) ;
-   DFFPCE (dir7_24n3ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   not_rtlc24n41,i_clock,dir7(1)) ;
-   DFFPCE (dir7_24n3ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   not_rtlc24n41,i_clock,dir7(0)) ;
-   DFFPCE (r9_25n4ss1(9),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(9)) ;
-   DFFPCE (r9_25n4ss1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(8)) ;
-   DFFPCE (r9_25n4ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(7)) ;
-   DFFPCE (r9_25n4ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(6)) ;
-   DFFPCE (r9_25n4ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(5)) ;
-   DFFPCE (r9_25n4ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(4)) ;
-   DFFPCE (r9_25n4ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(3)) ;
-   DFFPCE (r9_25n4ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(2)) ;
-   DFFPCE (r9_25n4ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(1)) ;
-   DFFPCE (r9_25n4ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n236,i_clock,r9(0)) ;
-   DFFPCE (r4_25n6ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r4(7)) ;
-   DFFPCE (r4_25n6ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r4(6)) ;
-   DFFPCE (r4_25n6ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r4(5)) ;
-   DFFPCE (r4_25n6ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r4(4)) ;
-   DFFPCE (r4_25n6ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r4(3)) ;
-   DFFPCE (r4_25n6ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r4(2)) ;
-   DFFPCE (r4_25n6ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r4(1)) ;
-   DFFPCE (r4_25n6ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r4(0)) ;
-   DFFPCE (r3_25n6ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r3(7)) ;
-   DFFPCE (r3_25n6ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r3(6)) ;
-   DFFPCE (r3_25n6ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r3(5)) ;
-   DFFPCE (r3_25n6ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r3(4)) ;
-   DFFPCE (r3_25n6ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r3(3)) ;
-   DFFPCE (r3_25n6ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r3(2)) ;
-   DFFPCE (r3_25n6ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r3(1)) ;
-   DFFPCE (r3_25n6ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r3(0)) ;
-   DFFPCE (r2_25n6ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r2(7)) ;
-   DFFPCE (r2_25n6ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r2(6)) ;
-   DFFPCE (r2_25n6ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r2(5)) ;
-   DFFPCE (r2_25n6ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r2(4)) ;
-   DFFPCE (r2_25n6ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r2(3)) ;
-   DFFPCE (r2_25n6ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r2(2)) ;
-   DFFPCE (r2_25n6ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r2(1)) ;
-   DFFPCE (r2_25n6ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r2(0)) ;
-   DFFPCE (r1_25n6ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r1(7)) ;
-   DFFPCE (r1_25n6ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r1(6)) ;
-   DFFPCE (r1_25n6ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r1(5)) ;
-   DFFPCE (r1_25n6ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r1(4)) ;
-   DFFPCE (r1_25n6ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r1(3)) ;
-   DFFPCE (r1_25n6ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r1(2)) ;
-   DFFPCE (r1_25n6ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r1(1)) ;
-   DFFPCE (r1_25n6ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
-   rtlc25n226,i_clock,r1(0)) ;
+   DFFPCE (dir7_19n3ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlcn381,i_clock,dir7(2)) ;
+   DFFPCE (dir7_19n3ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlcn381,i_clock,dir7(1)) ;
+   DFFPCE (dir7_19n3ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlcn381,i_clock,dir7(0)) ;
+   DFFPCE (r9_20n4ss1(9),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(9)) ;
+   DFFPCE (r9_20n4ss1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(8)) ;
+   DFFPCE (r9_20n4ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(7)) ;
+   DFFPCE (r9_20n4ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(6)) ;
+   DFFPCE (r9_20n4ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(5)) ;
+   DFFPCE (r9_20n4ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(4)) ;
+   DFFPCE (r9_20n4ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(3)) ;
+   DFFPCE (r9_20n4ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(2)) ;
+   DFFPCE (r9_20n4ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(1)) ;
+   DFFPCE (r9_20n4ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n236,i_clock,r9(0)) ;
+   DFFPCE (r4_20n6ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r4(7)) ;
+   DFFPCE (r4_20n6ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r4(6)) ;
+   DFFPCE (r4_20n6ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r4(5)) ;
+   DFFPCE (r4_20n6ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r4(4)) ;
+   DFFPCE (r4_20n6ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r4(3)) ;
+   DFFPCE (r4_20n6ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r4(2)) ;
+   DFFPCE (r4_20n6ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r4(1)) ;
+   DFFPCE (r4_20n6ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r4(0)) ;
+   DFFPCE (r3_20n6ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r3(7)) ;
+   DFFPCE (r3_20n6ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r3(6)) ;
+   DFFPCE (r3_20n6ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r3(5)) ;
+   DFFPCE (r3_20n6ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r3(4)) ;
+   DFFPCE (r3_20n6ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r3(3)) ;
+   DFFPCE (r3_20n6ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r3(2)) ;
+   DFFPCE (r3_20n6ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r3(1)) ;
+   DFFPCE (r3_20n6ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r3(0)) ;
+   DFFPCE (r2_20n6ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r2(7)) ;
+   DFFPCE (r2_20n6ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r2(6)) ;
+   DFFPCE (r2_20n6ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r2(5)) ;
+   DFFPCE (r2_20n6ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r2(4)) ;
+   DFFPCE (r2_20n6ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r2(3)) ;
+   DFFPCE (r2_20n6ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r2(2)) ;
+   DFFPCE (r2_20n6ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r2(1)) ;
+   DFFPCE (r2_20n6ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r2(0)) ;
+   DFFPCE (r1_20n6ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r1(7)) ;
+   DFFPCE (r1_20n6ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r1(6)) ;
+   DFFPCE (r1_20n6ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r1(5)) ;
+   DFFPCE (r1_20n6ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r1(4)) ;
+   DFFPCE (r1_20n6ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r1(3)) ;
+   DFFPCE (r1_20n6ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r1(2)) ;
+   DFFPCE (r1_20n6ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r1(1)) ;
+   DFFPCE (r1_20n6ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   rtlc20n226,i_clock,r1(0)) ;
    DFFRSE (add3(10),debug_num_5_0_EXMPLR430,v(2),debug_num_5_1_EXMPLR431,
    i_clock,r8(10)) ;
    DFFRSE (add3(9),debug_num_5_0_EXMPLR430,v(2),debug_num_5_1_EXMPLR431,
    i_clock,r8(9)) ;
-   DFFPC (r8_25n1ss1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPC (r8_20n1ss1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_clock,r8(8)) ;
-   DFFPC (r8_25n1ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPC (r8_20n1ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_clock,r8(7)) ;
-   DFFPC (r8_25n1ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPC (r8_20n1ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_clock,r8(6)) ;
-   DFFPC (r8_25n1ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPC (r8_20n1ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_clock,r8(5)) ;
-   DFFPC (r8_25n1ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPC (r8_20n1ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_clock,r8(4)) ;
-   DFFPC (r8_25n1ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPC (r8_20n1ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_clock,r8(3)) ;
-   DFFPC (r8_25n1ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPC (r8_20n1ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_clock,r8(2)) ;
-   DFFPC (r8_25n1ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPC (r8_20n1ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_clock,r8(1)) ;
-   DFFPC (r8_25n1ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   DFFPC (r8_20n1ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
    i_clock,r8(0)) ;
    DFFPC (add4(12),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,
    r15(12)) ;
@@ -2688,7 +2702,7 @@ begin
    r15(2)) ;
    DFFPC (add4(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,
    r15(1)) ;
-   DFFPC (r13(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,
+   DFFPC (add4(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,
    r15(0)) ;
    DFFPC (max3(9),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,
    r14_12) ;
@@ -2806,134 +2820,299 @@ begin
    r5(1)) ;
    DFFPC (max1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,
    r5(0)) ;
-   DFFPC (rtlc26n59,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,
+   DFFPC (rtlc21n59,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,
    o_valid) ;
-   DFFRSE (dir5(1),rtlcn143,debug_num_5_0_EXMPLR430,rtlc23n83,i_clock,
+   DFFRSE (output_edge_22n5s1,debug_num_5_0_EXMPLR430,sub4_13,
+   debug_num_5_1_EXMPLR431,i_clock,o_edge_EXMPLR416) ;
+   DFFRSE (sub4_22n4s1_13,debug_num_5_0_EXMPLR430,not_v_7,
+   debug_num_5_1_EXMPLR431,i_clock,sub4_13) ;
+   DFFRSE (sub4_22n4s1_12,debug_num_5_0_EXMPLR430,not_v_7,
+   debug_num_5_1_EXMPLR431,i_clock,sub4_12) ;
+   DFFRSE (sub4_22n4s1_11,debug_num_5_0_EXMPLR430,not_v_7,
+   debug_num_5_1_EXMPLR431,i_clock,sub4_11) ;
+   DFFRSE (sub4_22n4s1_10,debug_num_5_0_EXMPLR430,not_v_7,
+   debug_num_5_1_EXMPLR431,i_clock,sub4_10) ;
+   DFFRSE (sub4_22n4s1_9,debug_num_5_0_EXMPLR430,not_v_7,
+   debug_num_5_1_EXMPLR431,i_clock,sub4_9) ;
+   DFFRSE (sub4_22n4s1_8,debug_num_5_0_EXMPLR430,not_v_7,
+   debug_num_5_1_EXMPLR431,i_clock,sub4_8) ;
+   DFFRSE (sub4_22n4s1_7,debug_num_5_0_EXMPLR430,not_v_7,
+   debug_num_5_1_EXMPLR431,i_clock,sub4_7) ;
+   DFFPC (add4_22n4s1(12),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(12)) ;
+   DFFPC (add4_22n4s1(11),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(11)) ;
+   DFFPC (add4_22n4s1(10),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(10)) ;
+   DFFPC (add4_22n4s1(9),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(9)) ;
+   DFFPC (add4_22n4s1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(8)) ;
+   DFFPC (add4_22n4s1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(7)) ;
+   DFFPC (add4_22n4s1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(6)) ;
+   DFFPC (add4_22n4s1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(5)) ;
+   DFFPC (add4_22n4s1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(4)) ;
+   DFFPC (add4_22n4s1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(3)) ;
+   DFFPC (add4_22n4s1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(2)) ;
+   DFFPC (add4_22n4s1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add4(1)) ;
+   DFFPC (r13(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,i_clock,
+   add4(0)) ;
+   DFFPC (add3_22n4s1(10),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(10)) ;
+   DFFPC (add3_22n4s1(9),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(9)) ;
+   DFFPC (add3_22n4s1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(8)) ;
+   DFFPC (add3_22n4s1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(7)) ;
+   DFFPC (add3_22n4s1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(6)) ;
+   DFFPC (add3_22n4s1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(5)) ;
+   DFFPC (add3_22n4s1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(4)) ;
+   DFFPC (add3_22n4s1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(3)) ;
+   DFFPC (add3_22n4s1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(2)) ;
+   DFFPC (add3_22n4s1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(1)) ;
+   DFFPC (add3_22n4s1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add3(0)) ;
+   DFFPC (add2_22n4s1(9),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(9)) ;
+   DFFPC (add2_22n4s1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(8)) ;
+   DFFPC (add2_22n4s1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(7)) ;
+   DFFPC (add2_22n4s1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(6)) ;
+   DFFPC (add2_22n4s1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(5)) ;
+   DFFPC (add2_22n4s1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(4)) ;
+   DFFPC (add2_22n4s1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(3)) ;
+   DFFPC (add2_22n4s1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(2)) ;
+   DFFPC (add2_22n4s1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(1)) ;
+   DFFPC (add2_22n4s1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add2(0)) ;
+   DFFPC (add1_22n4s1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add1(8)) ;
+   DFFPC (add1_22n4s1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add1(7)) ;
+   DFFPC (add1_22n4s1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add1(6)) ;
+   DFFPC (add1_22n4s1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add1(5)) ;
+   DFFPC (add1_22n4s1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add1(4)) ;
+   DFFPC (add1_22n4s1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add1(3)) ;
+   DFFPC (add1_22n4s1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add1(2)) ;
+   DFFPC (add1_22n4s1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add1(1)) ;
+   DFFPC (add1_22n4s1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,add1(0)) ;
+   DFFPC (max3_22n3ss1(9),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(9)) ;
+   DFFPC (max3_22n3ss1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(8)) ;
+   DFFPC (max3_22n3ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(7)) ;
+   DFFPC (max3_22n3ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(6)) ;
+   DFFPC (max3_22n3ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(5)) ;
+   DFFPC (max3_22n3ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(4)) ;
+   DFFPC (max3_22n3ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(3)) ;
+   DFFPC (max3_22n3ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(2)) ;
+   DFFPC (max3_22n3ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(1)) ;
+   DFFPC (max3_22n3ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max3(0)) ;
+   DFFPC (sub3_22n3s1_10,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,sub3_10) ;
+   DFFPC (max2_22n2ss1(9),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(9)) ;
+   DFFPC (max2_22n2ss1(8),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(8)) ;
+   DFFPC (max2_22n2ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(7)) ;
+   DFFPC (max2_22n2ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(6)) ;
+   DFFPC (max2_22n2ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(5)) ;
+   DFFPC (max2_22n2ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(4)) ;
+   DFFPC (max2_22n2ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(3)) ;
+   DFFPC (max2_22n2ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(2)) ;
+   DFFPC (max2_22n2ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(1)) ;
+   DFFPC (max2_22n2ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max2(0)) ;
+   DFFPC (sub2_22n2s1_10,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,sub2_10) ;
+   DFFPC (max1_22n1ss1(7),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max1(7)) ;
+   DFFPC (max1_22n1ss1(6),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max1(6)) ;
+   DFFPC (max1_22n1ss1(5),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max1(5)) ;
+   DFFPC (max1_22n1ss1(4),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max1(4)) ;
+   DFFPC (max1_22n1ss1(3),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max1(3)) ;
+   DFFPC (max1_22n1ss1(2),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max1(2)) ;
+   DFFPC (max1_22n1ss1(1),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max1(1)) ;
+   DFFPC (max1_22n1ss1(0),debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,max1(0)) ;
+   DFFPC (sub1_22n1s1_8,debug_num_5_0_EXMPLR430,debug_num_5_0_EXMPLR430,
+   i_clock,sub1_8) ;
+   DFFRSE (dir5(1),rtlcn141,debug_num_5_0_EXMPLR430,rtlc18n83,i_clock,
    dir6(1)) ;
-   DFFRSE (dir5(0),rtlcn143,debug_num_5_0_EXMPLR430,rtlc23n83,i_clock,
+   DFFRSE (dir5(0),rtlcn141,debug_num_5_0_EXMPLR430,rtlc18n83,i_clock,
    dir6(0)) ;
-   DFFRSE (dir2_2,debug_num_5_0_EXMPLR430,rtlcn147,v(4),i_clock,dir5(0)) ;
-   t_modu2_20i1_rtlcm_0_not_in1_0 <= NOT t_20n2s2(0) ;
-   t_modu2_20i1_rtlcm_0_not_in1_1 <= NOT t_20n2s2(1) ;
-   t_20n2s1(1) <= t_20n2s2(1) AND t_modu2_20i1_rtlcm_0_not_in1_0 ;
-   t_20n2s1(0) <= t_modu2_20i1_rtlcm_0_not_in1_1 AND t_20n2s2(0) ;
+   DFFRSE (dir2_2,debug_num_5_0_EXMPLR430,rtlcn145,v(4),i_clock,dir5(0)) ;
+   t_modu2_15i1_rtlcm_0_not_in1_0 <= NOT t_15n2s2(0) ;
+   t_modu2_15i1_rtlcm_0_not_in1_1 <= NOT t_15n2s2(1) ;
+   t_15n2s1(1) <= t_15n2s2(1) AND t_modu2_15i1_rtlcm_0_not_in1_0 ;
+   t_15n2s1(0) <= t_modu2_15i1_rtlcm_0_not_in1_1 AND t_15n2s2(0) ;
    NOT_r15_0 <= NOT r15(0) ;
-   rtlc16n0_sub13_16i1 : sub_12u_12u_12u_0 port map ( cin=>NOT_r15_0, a(11)
-      =>r14_12, a(10)=>r14_11, a(9)=>r14_10, a(8)=>r14_9, a(7)=>r14_8, a(6)
-      =>r14_7, a(5)=>r14_6, a(4)=>r14_5, a(3)=>r14_4, a(2)=>r14_3, a(1)=>
+   sub4_sub13_22i36 : sub_12u_12u_12u_0 port map ( cin=>NOT_r15_0, a(11)=>
+      r14_12, a(10)=>r14_11, a(9)=>r14_10, a(8)=>r14_9, a(7)=>r14_8, a(6)=>
+      r14_7, a(5)=>r14_6, a(4)=>r14_5, a(3)=>r14_4, a(2)=>r14_3, a(1)=>
       debug_num_5_0_EXMPLR430, a(0)=>debug_num_5_0_EXMPLR430, b(11)=>r15(12), 
       b(10)=>r15(11), b(9)=>r15(10), b(8)=>r15(9), b(7)=>r15(8), b(6)=>
       r15(7), b(5)=>r15(6), b(4)=>r15(5), b(3)=>r15(4), b(2)=>r15(3), b(1)=>
-      r15(2), b(0)=>r15(1), d(11)=>rtlc16n0_16n1s2_12, d(10)=>
-      rtlc16n0_16n1s2_11, d(9)=>rtlc16n0_16n1s2_10, d(8)=>rtlc16n0_16n1s2_9, 
-      d(7)=>rtlc16n0_16n1s2_8, d(6)=>rtlc16n0_16n1s2_7, d(5)=>DANGLING(46), 
-      d(4)=>DANGLING(47), d(3)=>DANGLING(48), d(2)=>DANGLING(49), d(1)=>
-      DANGLING(50), d(0)=>DANGLING(51), cout=>rtlcn666);
-   r1_25n6ss1(0) <= a(0) when v(0) = '1' else nx342 ;
-   nx342 <= c(0) when v(1) = '1' else nx345 ;
-   nx345 <= e(0) when v(2) = '1' else g(0) ;
-   r1_25n6ss1(1) <= a(1) when v(0) = '1' else nx351 ;
-   nx351 <= c(1) when v(1) = '1' else nx354 ;
-   nx354 <= e(1) when v(2) = '1' else g(1) ;
-   r1_25n6ss1(2) <= a(2) when v(0) = '1' else nx360 ;
-   nx360 <= c(2) when v(1) = '1' else nx363 ;
-   nx363 <= e(2) when v(2) = '1' else g(2) ;
-   r1_25n6ss1(3) <= a(3) when v(0) = '1' else nx369 ;
-   nx369 <= c(3) when v(1) = '1' else nx372 ;
-   nx372 <= e(3) when v(2) = '1' else g(3) ;
-   r1_25n6ss1(4) <= a(4) when v(0) = '1' else nx378 ;
-   nx378 <= c(4) when v(1) = '1' else nx381 ;
-   nx381 <= e(4) when v(2) = '1' else g(4) ;
-   r1_25n6ss1(5) <= a(5) when v(0) = '1' else nx387 ;
-   nx387 <= c(5) when v(1) = '1' else nx390 ;
-   nx390 <= e(5) when v(2) = '1' else g(5) ;
-   r1_25n6ss1(6) <= a(6) when v(0) = '1' else nx396 ;
-   nx396 <= c(6) when v(1) = '1' else nx399 ;
-   nx399 <= e(6) when v(2) = '1' else g(6) ;
-   r1_25n6ss1(7) <= a(7) when v(0) = '1' else nx405 ;
-   nx405 <= c(7) when v(1) = '1' else nx408 ;
-   nx408 <= e(7) when v(2) = '1' else g(7) ;
-   r2_25n6ss1(0) <= d(0) when v(0) = '1' else nx414 ;
-   nx414 <= f(0) when v(1) = '1' else nx417 ;
-   nx417 <= h(0) when v(2) = '1' else b(0) ;
-   r2_25n6ss1(1) <= d(1) when v(0) = '1' else nx423 ;
-   nx423 <= f(1) when v(1) = '1' else nx426 ;
-   nx426 <= h(1) when v(2) = '1' else b(1) ;
-   r2_25n6ss1(2) <= d(2) when v(0) = '1' else nx432 ;
-   nx432 <= f(2) when v(1) = '1' else nx435 ;
-   nx435 <= h(2) when v(2) = '1' else b(2) ;
-   r2_25n6ss1(3) <= d(3) when v(0) = '1' else nx441 ;
-   nx441 <= f(3) when v(1) = '1' else nx444 ;
-   nx444 <= h(3) when v(2) = '1' else b(3) ;
-   r2_25n6ss1(4) <= d(4) when v(0) = '1' else nx450 ;
-   nx450 <= f(4) when v(1) = '1' else nx453 ;
-   nx453 <= h(4) when v(2) = '1' else b(4) ;
-   r2_25n6ss1(5) <= d(5) when v(0) = '1' else nx459 ;
-   nx459 <= f(5) when v(1) = '1' else nx462 ;
-   nx462 <= h(5) when v(2) = '1' else b(5) ;
-   r2_25n6ss1(6) <= d(6) when v(0) = '1' else nx468 ;
-   nx468 <= f(6) when v(1) = '1' else nx471 ;
-   nx471 <= h(6) when v(2) = '1' else b(6) ;
-   r2_25n6ss1(7) <= d(7) when v(0) = '1' else nx477 ;
-   nx477 <= f(7) when v(1) = '1' else nx480 ;
-   nx480 <= h(7) when v(2) = '1' else b(7) ;
-   r3_25n6ss1(0) <= c(0) when v(0) = '1' else nx486 ;
-   nx486 <= e(0) when v(1) = '1' else nx489 ;
-   nx489 <= f(0) when v(2) = '1' else a(0) ;
-   r3_25n6ss1(1) <= c(1) when v(0) = '1' else nx495 ;
-   nx495 <= e(1) when v(1) = '1' else nx498 ;
-   nx498 <= f(1) when v(2) = '1' else a(1) ;
-   r3_25n6ss1(2) <= c(2) when v(0) = '1' else nx504 ;
-   nx504 <= e(2) when v(1) = '1' else nx507 ;
-   nx507 <= f(2) when v(2) = '1' else a(2) ;
-   r3_25n6ss1(3) <= c(3) when v(0) = '1' else nx513 ;
-   nx513 <= e(3) when v(1) = '1' else nx516 ;
-   nx516 <= f(3) when v(2) = '1' else a(3) ;
-   r3_25n6ss1(4) <= c(4) when v(0) = '1' else nx522 ;
-   nx522 <= e(4) when v(1) = '1' else nx525 ;
-   nx525 <= f(4) when v(2) = '1' else a(4) ;
-   r3_25n6ss1(5) <= c(5) when v(0) = '1' else nx532 ;
-   nx532 <= e(5) when v(1) = '1' else nx536 ;
-   nx536 <= f(5) when v(2) = '1' else a(5) ;
-   r3_25n6ss1(6) <= c(6) when v(0) = '1' else nx544 ;
-   nx544 <= e(6) when v(1) = '1' else nx547 ;
-   nx547 <= f(6) when v(2) = '1' else a(6) ;
-   r3_25n6ss1(7) <= c(7) when v(0) = '1' else nx555 ;
-   nx555 <= e(7) when v(1) = '1' else nx559 ;
-   nx559 <= f(7) when v(2) = '1' else a(7) ;
-   r4_25n6ss1(0) <= b(0) when v(0) = '1' else nx567 ;
-   nx567 <= d(0) when v(1) = '1' else nx571 ;
-   nx571 <= g(0) when v(2) = '1' else h(0) ;
-   r4_25n6ss1(1) <= b(1) when v(0) = '1' else nx577 ;
-   nx577 <= d(1) when v(1) = '1' else nx580 ;
-   nx580 <= g(1) when v(2) = '1' else h(1) ;
-   r4_25n6ss1(2) <= b(2) when v(0) = '1' else nx586 ;
-   nx586 <= d(2) when v(1) = '1' else nx589 ;
-   nx589 <= g(2) when v(2) = '1' else h(2) ;
-   r4_25n6ss1(3) <= b(3) when v(0) = '1' else nx595 ;
-   nx595 <= d(3) when v(1) = '1' else nx599 ;
-   nx599 <= g(3) when v(2) = '1' else h(3) ;
-   r4_25n6ss1(4) <= b(4) when v(0) = '1' else nx606 ;
-   nx606 <= d(4) when v(1) = '1' else nx609 ;
-   nx609 <= g(4) when v(2) = '1' else h(4) ;
-   r4_25n6ss1(5) <= b(5) when v(0) = '1' else nx615 ;
-   nx615 <= d(5) when v(1) = '1' else nx619 ;
-   nx619 <= g(5) when v(2) = '1' else h(5) ;
-   r4_25n6ss1(6) <= b(6) when v(0) = '1' else nx627 ;
-   nx627 <= d(6) when v(1) = '1' else nx630 ;
-   nx630 <= g(6) when v(2) = '1' else h(6) ;
-   r4_25n6ss1(7) <= b(7) when v(0) = '1' else nx637 ;
-   nx637 <= d(7) when v(1) = '1' else nx641 ;
-   nx641 <= g(7) when v(2) = '1' else h(7) ;
+      r15(2), b(0)=>r15(1), d(11)=>sub4_22n4s1_12, d(10)=>sub4_22n4s1_11, 
+      d(9)=>sub4_22n4s1_10, d(8)=>sub4_22n4s1_9, d(7)=>sub4_22n4s1_8, d(6)=>
+      sub4_22n4s1_7, d(5)=>DANGLING(46), d(4)=>DANGLING(47), d(3)=>DANGLING(
+      48), d(2)=>DANGLING(49), d(1)=>DANGLING(50), d(0)=>DANGLING(51), cout
+      =>rtlcn811);
+   r1_20n6ss1(0) <= a(0) when v(0) = '1' else nx318 ;
+   nx318 <= c(0) when v(1) = '1' else nx321 ;
+   nx321 <= e(0) when v(2) = '1' else g(0) ;
+   r1_20n6ss1(1) <= a(1) when v(0) = '1' else nx327 ;
+   nx327 <= c(1) when v(1) = '1' else nx330 ;
+   nx330 <= e(1) when v(2) = '1' else g(1) ;
+   r1_20n6ss1(2) <= a(2) when v(0) = '1' else nx336 ;
+   nx336 <= c(2) when v(1) = '1' else nx339 ;
+   nx339 <= e(2) when v(2) = '1' else g(2) ;
+   r1_20n6ss1(3) <= a(3) when v(0) = '1' else nx345 ;
+   nx345 <= c(3) when v(1) = '1' else nx348 ;
+   nx348 <= e(3) when v(2) = '1' else g(3) ;
+   r1_20n6ss1(4) <= a(4) when v(0) = '1' else nx354 ;
+   nx354 <= c(4) when v(1) = '1' else nx357 ;
+   nx357 <= e(4) when v(2) = '1' else g(4) ;
+   r1_20n6ss1(5) <= a(5) when v(0) = '1' else nx363 ;
+   nx363 <= c(5) when v(1) = '1' else nx366 ;
+   nx366 <= e(5) when v(2) = '1' else g(5) ;
+   r1_20n6ss1(6) <= a(6) when v(0) = '1' else nx372 ;
+   nx372 <= c(6) when v(1) = '1' else nx375 ;
+   nx375 <= e(6) when v(2) = '1' else g(6) ;
+   r1_20n6ss1(7) <= a(7) when v(0) = '1' else nx381 ;
+   nx381 <= c(7) when v(1) = '1' else nx384 ;
+   nx384 <= e(7) when v(2) = '1' else g(7) ;
+   r2_20n6ss1(0) <= d(0) when v(0) = '1' else nx390 ;
+   nx390 <= f(0) when v(1) = '1' else nx393 ;
+   nx393 <= h(0) when v(2) = '1' else b(0) ;
+   r2_20n6ss1(1) <= d(1) when v(0) = '1' else nx399 ;
+   nx399 <= f(1) when v(1) = '1' else nx402 ;
+   nx402 <= h(1) when v(2) = '1' else b(1) ;
+   r2_20n6ss1(2) <= d(2) when v(0) = '1' else nx408 ;
+   nx408 <= f(2) when v(1) = '1' else nx411 ;
+   nx411 <= h(2) when v(2) = '1' else b(2) ;
+   r2_20n6ss1(3) <= d(3) when v(0) = '1' else nx417 ;
+   nx417 <= f(3) when v(1) = '1' else nx420 ;
+   nx420 <= h(3) when v(2) = '1' else b(3) ;
+   r2_20n6ss1(4) <= d(4) when v(0) = '1' else nx426 ;
+   nx426 <= f(4) when v(1) = '1' else nx429 ;
+   nx429 <= h(4) when v(2) = '1' else b(4) ;
+   r2_20n6ss1(5) <= d(5) when v(0) = '1' else nx435 ;
+   nx435 <= f(5) when v(1) = '1' else nx438 ;
+   nx438 <= h(5) when v(2) = '1' else b(5) ;
+   r2_20n6ss1(6) <= d(6) when v(0) = '1' else nx444 ;
+   nx444 <= f(6) when v(1) = '1' else nx447 ;
+   nx447 <= h(6) when v(2) = '1' else b(6) ;
+   r2_20n6ss1(7) <= d(7) when v(0) = '1' else nx453 ;
+   nx453 <= f(7) when v(1) = '1' else nx456 ;
+   nx456 <= h(7) when v(2) = '1' else b(7) ;
+   r3_20n6ss1(0) <= c(0) when v(0) = '1' else nx462 ;
+   nx462 <= e(0) when v(1) = '1' else nx465 ;
+   nx465 <= f(0) when v(2) = '1' else a(0) ;
+   r3_20n6ss1(1) <= c(1) when v(0) = '1' else nx471 ;
+   nx471 <= e(1) when v(1) = '1' else nx474 ;
+   nx474 <= f(1) when v(2) = '1' else a(1) ;
+   r3_20n6ss1(2) <= c(2) when v(0) = '1' else nx480 ;
+   nx480 <= e(2) when v(1) = '1' else nx483 ;
+   nx483 <= f(2) when v(2) = '1' else a(2) ;
+   r3_20n6ss1(3) <= c(3) when v(0) = '1' else nx489 ;
+   nx489 <= e(3) when v(1) = '1' else nx492 ;
+   nx492 <= f(3) when v(2) = '1' else a(3) ;
+   r3_20n6ss1(4) <= c(4) when v(0) = '1' else nx500 ;
+   nx500 <= e(4) when v(1) = '1' else nx504 ;
+   nx504 <= f(4) when v(2) = '1' else a(4) ;
+   r3_20n6ss1(5) <= c(5) when v(0) = '1' else nx511 ;
+   nx511 <= e(5) when v(1) = '1' else nx515 ;
+   nx515 <= f(5) when v(2) = '1' else a(5) ;
+   r3_20n6ss1(6) <= c(6) when v(0) = '1' else nx523 ;
+   nx523 <= e(6) when v(1) = '1' else nx527 ;
+   nx527 <= f(6) when v(2) = '1' else a(6) ;
+   r3_20n6ss1(7) <= c(7) when v(0) = '1' else nx535 ;
+   nx535 <= e(7) when v(1) = '1' else nx538 ;
+   nx538 <= f(7) when v(2) = '1' else a(7) ;
+   r4_20n6ss1(0) <= b(0) when v(0) = '1' else nx544 ;
+   nx544 <= d(0) when v(1) = '1' else nx547 ;
+   nx547 <= g(0) when v(2) = '1' else h(0) ;
+   r4_20n6ss1(1) <= b(1) when v(0) = '1' else nx553 ;
+   nx553 <= d(1) when v(1) = '1' else nx556 ;
+   nx556 <= g(1) when v(2) = '1' else h(1) ;
+   r4_20n6ss1(2) <= b(2) when v(0) = '1' else nx563 ;
+   nx563 <= d(2) when v(1) = '1' else nx567 ;
+   nx567 <= g(2) when v(2) = '1' else h(2) ;
+   r4_20n6ss1(3) <= b(3) when v(0) = '1' else nx574 ;
+   nx574 <= d(3) when v(1) = '1' else nx577 ;
+   nx577 <= g(3) when v(2) = '1' else h(3) ;
+   r4_20n6ss1(4) <= b(4) when v(0) = '1' else nx585 ;
+   nx585 <= d(4) when v(1) = '1' else nx589 ;
+   nx589 <= g(4) when v(2) = '1' else h(4) ;
+   r4_20n6ss1(5) <= b(5) when v(0) = '1' else nx596 ;
+   nx596 <= d(5) when v(1) = '1' else nx599 ;
+   nx599 <= g(5) when v(2) = '1' else h(5) ;
+   r4_20n6ss1(6) <= b(6) when v(0) = '1' else nx605 ;
+   nx605 <= d(6) when v(1) = '1' else nx609 ;
+   nx609 <= g(6) when v(2) = '1' else h(6) ;
+   r4_20n6ss1(7) <= b(7) when v(0) = '1' else nx615 ;
+   nx615 <= d(7) when v(1) = '1' else nx618 ;
+   nx618 <= g(7) when v(2) = '1' else h(7) ;
    modgen_or_33 : or_5u_5u port map ( a(4)=>sub4_12, a(3)=>sub4_11, a(2)=>
-      sub4_10, a(1)=>sub4_9, a(0)=>rtlc17n0_17n1s3, d=>rtlc17n0_17n1s2);
+      sub4_10, a(1)=>sub4_9, a(0)=>output_edge_22n5s2, d=>output_edge_22n5s1
+   );
    modgen_or_34 : or_7u_7u port map ( a(6)=>o_row_EXMPLR435(2), a(5)=>
       o_row_EXMPLR435(3), a(4)=>o_row_EXMPLR435(4), a(3)=>o_row_EXMPLR435(5), 
-      a(2)=>o_row_EXMPLR435(6), a(1)=>o_row_EXMPLR435(7), a(0)=>rtlc26n206, 
-      d=>rtlc26n207);
+      a(2)=>o_row_EXMPLR435(6), a(1)=>o_row_EXMPLR435(7), a(0)=>rtlc21n206, 
+      d=>rtlc21n207);
    modgen_or_35 : or_8u_8u port map ( a(7)=>o_row_EXMPLR435(0), a(6)=>x(2), 
       a(5)=>x(3), a(4)=>x(4), a(3)=>x(5), a(2)=>x(6), a(1)=>x(7), a(0)=>
-      rtlc26n204, d=>rtlc26n205);
+      rtlc21n204, d=>rtlc21n205);
 end main_unfold_1777 ;
 
 library IEEE;library altera_mf;library lpm;library altera; 
