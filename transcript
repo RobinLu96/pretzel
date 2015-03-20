@@ -1,0 +1,90 @@
+# //  ModelSim SE 10.1 Dec  5 2011 
+# //
+# //  Copyright 1991-2011 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //
+# vsim -do uw_tmp/uw-sim.tcl -lib work-msim -sdfmax uut/chip=uw_tmp/kirsch_chip.sdf -t 1ns -wlf uw_tmp/vsim.wlf kirsch_tb 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.kirsch_synth_pkg(body)
+# Loading work.file_pkg(body)
+# Loading work.string_pkg(body)
+# Loading work.kirsch_unsynth_pkg(body)
+# Loading work.kirsch_tb(main)#1
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading cycloneii.cycloneii_atom_pack(body)
+# Loading cycloneii.cycloneii_components
+# Loading work.kirsch(shim)#1
+# Loading work.kirsch_chip(structure)#1
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)#1
+# Loading cycloneii.cycloneii_and1(altvital)#1
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)#2
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)#3
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#1
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#2
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)#4
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#3
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#4
+# Loading cycloneii.cycloneii_ram_block(block_arch)#1
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#1
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#2
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#3
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#4
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#5
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#6
+# Loading cycloneii.cycloneii_ram_register(reg_arch)#7
+# Loading cycloneii.cycloneii_ram_pulse_generator(pgen_arch)#1
+# Loading cycloneii.cycloneii_ram_pulse_generator(pgen_arch)#2
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#5
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#6
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#7
+# Loading ieee.std_logic_arith(body)
+# Loading cycloneii.cycloneii_io(structure)#1
+# Loading cycloneii.cycloneii_mux21(altvital)#1
+# Loading cycloneii.cycloneii_dffe(behave)#1
+# Loading cycloneii.cycloneii_asynch_io(behave)#1
+# Loading cycloneii.cycloneii_clkctrl(vital_clkctrl)#1
+# Loading cycloneii.cycloneii_ena_reg(behave)#1
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#8
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#9
+# Loading cycloneii.cycloneii_lcell_ff(vital_lcell_ff)#5
+# Loading cycloneii.cycloneii_lcell_comb(vital_lcell_comb)#10
+# Loading cycloneii.cycloneii_io(structure)#2
+# Loading cycloneii.cycloneii_asynch_io(behave)#2
+# Loading cycloneii.cycloneii_io(structure)#3
+# Loading cycloneii.cycloneii_io(structure)#4
+# Loading instances from uw_tmp/kirsch_chip.sdf
+# Loading timing data from uw_tmp/kirsch_chip.sdf
+# ** Warning: (vsim-3479) Time unit 'ps' is less than the simulator resolution (1ns).
+#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb/uut/chip/i_clock_ibuf/asynch_inst File: /watform/pkg/quartus/eda/sim_lib/cycloneii_atoms.vhd
+# ** Note: (vsim-3587) SDF Backannotation Successfully Completed.
+#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb File: kirsch_tb.vhd
+# do uw_tmp/uw-sim.tcl 
+# ** Note: XXXXXXXXXXXX reading image from tests/test1.txt
+#    Time: 0 ns  Iteration: 0  Instance: /kirsch_tb
+# ** Note: latency begin wait
+#    Time: 61895 ns  Iteration: 1  Instance: /kirsch_tb
+# ** Note: latency waiting
+#    Time: 61910 ns  Iteration: 1  Instance: /kirsch_tb
+# ** Note: latency waiting
+#    Time: 61930 ns  Iteration: 1  Instance: /kirsch_tb
+# ** Note: latency waiting
+#    Time: 61950 ns  Iteration: 1  Instance: /kirsch_tb
+# ** Note: latency = 2
+#    Time: 61950 ns  Iteration: 1  Instance: /kirsch_tb
+# ** Note: XXXXXXXXXXXX got image
+#    Time: 7803750 ns  Iteration: 1  Instance: /kirsch_tb
+# ** Note: XXXXXXXXXXXX PLEASE HIT CTRL-C TO EXIT THE SIMULATOR
+#    Time: 7803750 ns  Iteration: 1  Instance: /kirsch_tb
+# ** Note: XXXXXXXXXXXX sent image
+#    Time: 7864435 ns  Iteration: 0  Instance: /kirsch_tb
+#  

@@ -1,0 +1,35 @@
+Warning: vmap will not overwrite local modelsim.ini.
+Warning: Library already exists at "work-msim".
+DEBUG: try_set: ECE327_HOME: False: /watform/pkg/ece327
+DEBUG: try_set: ECE327_HOME: True: Y:/
+DEBUG: try_set: modelsim: False: /CMC/local/maagaard/bin/
+DEBUG: try_set: modelsim: False: /watform/pkg/modelsim/
+DEBUG: try_set: modelsim: False: /opt/modelsim/
+DEBUG: try_set: modelsim: True: C:/Software/modeltech_10.1/win32/
+DEBUG: try_set: precision: False: /watform/pkg/precision/
+DEBUG: try_set: precision: False: /opt/precision/
+DEBUG: try_set: precision: True: C:/Program Files (x86)/Mentor Graphics/Precision Synthesis 2008a.47/Mgc_home/bin/
+DEBUG: try_set: quartus: False: /watform/pkg/quartus/
+DEBUG: try_set: quartus: False: /opt/quartus/
+DEBUG: try_set: quartus: True: C:/Software/Altera/10.1/quartus/bin/
+DEBUG: try_set: altera_sim_lib: True: Y://altera
+DEBUG: default_board: DE2
+** Warning: (vlib-34) Library already exists at "work-msim".
+** Warning: (vlib-34) Library already exists at "work-msim".
+  Model Technology ModelSim SE vcom 10.1 Compiler 2011.12 Dec  5 2011
+Model Technology ModelSim SE vcom 10.1 Compiler 2011.12 Dec  5 2011
+-- Loading package STANDARD
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package NUMERIC_STD
+-- Compiling entity kirsch
+-- Compiling entity kirsch
+-- Compiling architecture main of kirsch
+-- Compiling architecture main of kirsch
+-- Loading entity mem
+-- Loading entity mem
+ 

@@ -1,0 +1,564 @@
+
+*******************************************************
+
+Library: OPERATORS    Cell: or_8u_8u    View: INTERFACE
+
+*******************************************************
+
+ Number of ports :                       9
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box or_8u_8u :                    1
+
+*******************************************************
+
+Library: OPERATORS    Cell: or_7u_7u    View: INTERFACE
+
+*******************************************************
+
+ Number of ports :                       8
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box or_7u_7u :                    1
+
+*******************************************************
+
+Library: OPERATORS    Cell: or_5u_5u    View: INTERFACE
+
+*******************************************************
+
+ Number of ports :                       6
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box or_5u_5u :                    1
+
+****************************************************************
+
+Library: OPERATORS    Cell: sub_12u_12u_12u_0    View: INTERFACE
+
+****************************************************************
+
+ Number of ports :                      38
+ Number of nets :                       36
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box sub_12u_12u_12u_0 :           1
+
+***************************************************************
+
+Library: OPERATORS    Cell: add_9u_9u_9u_0_0    View: INTERFACE
+
+***************************************************************
+
+ Number of ports :                      29
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box add_9u_9u_9u_0_0 :            1
+
+***************************************************************
+
+Library: OPERATORS    Cell: add_8u_8u_8u_0_0    View: INTERFACE
+
+***************************************************************
+
+ Number of ports :                      26
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box add_8u_8u_8u_0_0 :            1
+
+****************************************************************************************
+
+Library: OPERATORS    Cell: counter_up_cnt_en_sclear_clock_clk_en_0_8    View: INTERFACE
+
+****************************************************************************************
+
+  Cell            Library  References     Total Area
+
+ AND2             PRIMITIVES     9 x      1      9 AND2
+ DFFE             PRIMITIVES     8 x      1      8 DFFE
+ FALSE            PRIMITIVES     1 x      1      1 FALSE
+ INV              PRIMITIVES     1 x      1      1 INV
+ OR2              PRIMITIVES     1 x      1      1 OR2
+ TRUE             PRIMITIVES     1 x      1      1 TRUE
+ inc_8u_8u_0_0    OPERATORS      1 x      1      1 inc_8u_8u_0_0
+
+ Number of ports :                      24
+ Number of nets :                       33
+ Number of instances :                  22
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box AND2 :                        9
+ Black Box DFFE :                        8
+ Black Box FALSE :                       1
+ Black Box INV :                         1
+ Black Box OR2 :                         1
+ Black Box TRUE :                        1
+ Black Box inc_8u_8u_0_0 :               1
+ Number of accumulated instances :      22
+
+************************************************************
+
+Library: OPERATORS    Cell: inc_8u_8u_0_0    View: INTERFACE
+
+************************************************************
+
+ Number of ports :                      18
+ Number of nets :                       16
+ Number of instances :                   0
+ Number of references to this view :     2
+
+Total accumulated area : 
+ Number of inc_8u_8u_0_0 :               1
+
+*********************************************************************************
+
+Library: OPERATORS    Cell: counter_up_cnt_en_sclear_clock_0_8    View: INTERFACE
+
+*********************************************************************************
+
+  Cell            Library  References     Total Area
+
+ AND2             PRIMITIVES     8 x      1      8 AND2
+ DFFE             PRIMITIVES     8 x      1      8 DFFE
+ FALSE            PRIMITIVES     1 x      1      1 FALSE
+ INV              PRIMITIVES     1 x      1      1 INV
+ OR2              PRIMITIVES     1 x      1      1 OR2
+ TRUE             PRIMITIVES     1 x      1      1 TRUE
+ inc_8u_8u_0_0    OPERATORS      1 x      1      1 inc_8u_8u_0_0
+
+ Number of ports :                      24
+ Number of nets :                       31
+ Number of instances :                  21
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box AND2 :                        8
+ Black Box DFFE :                        8
+ Black Box FALSE :                       1
+ Black Box INV :                         1
+ Black Box OR2 :                         1
+ Black Box TRUE :                        1
+ Black Box inc_8u_8u_0_0 :               1
+ Number of accumulated instances :      21
+
+********************************************************
+
+Library: OPERATORS    Cell: and_8u_8u    View: INTERFACE
+
+********************************************************
+
+ Number of ports :                       9
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     2
+
+Total accumulated area : 
+ Black Box and_8u_8u :                   1
+
+********************************************************
+
+Library: OPERATORS    Cell: and_3u_3u    View: INTERFACE
+
+********************************************************
+
+ Number of ports :                       4
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     2
+
+Total accumulated area : 
+ Black Box and_3u_3u :                   1
+
+********************************************************
+
+Library: OPERATORS    Cell: mux_3u_3u    View: INTERFACE
+
+********************************************************
+
+ Number of ports :                       7
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :    16
+
+Total accumulated area : 
+ Black Box mux_3u_3u :                   1
+
+********************************************************
+
+Library: OPERATORS    Cell: and_4u_4u    View: INTERFACE
+
+********************************************************
+
+ Number of ports :                       5
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box and_4u_4u :                   1
+
+**********************************************************
+
+Library: OPERATORS    Cell: inc_2u_2u_0    View: INTERFACE
+
+**********************************************************
+
+ Number of ports :                       6
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box inc_2u_2u_0 :                 1
+
+*******************************************************
+
+Library: OPERATORS    Cell: or_3u_3u    View: INTERFACE
+
+*******************************************************
+
+ Number of ports :                       4
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     2
+
+Total accumulated area : 
+ Black Box or_3u_3u :                    1
+
+****************************************************************
+
+Library: OPERATORS    Cell: sub_10u_10u_10u_0    View: INTERFACE
+
+****************************************************************
+
+ Number of ports :                      32
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     2
+
+Total accumulated area : 
+ Black Box sub_10u_10u_10u_0 :           1
+
+*************************************************************
+
+Library: OPERATORS    Cell: sub_8u_8u_8u_0    View: INTERFACE
+
+*************************************************************
+
+ Number of ports :                      26
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box sub_8u_8u_8u_0 :              1
+
+******************************************************************
+
+Library: OPERATORS    Cell: add_11u_11u_11u_0_0    View: INTERFACE
+
+******************************************************************
+
+ Number of ports :                      35
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     2
+
+Total accumulated area : 
+ Black Box add_11u_11u_11u_0_0 :         1
+
+******************************************************************************
+
+Library: OPERATORS    Cell: ram_new_0_mem_8_8_main    View: INTERFACE_unfold_1
+
+******************************************************************************
+
+  Cell                                  Library  References     Total Area
+
+ AND2                                   PRIMITIVES     2 x      1      2 AND2
+ DFF                                    PRIMITIVES     8 x      1      8 DFF
+ FALSE                                  PRIMITIVES     1 x      1      1 FALSE
+ TRUE                                   PRIMITIVES     1 x      1      1 TRUE
+ clocked_ram_8_8_256_F_T_F_F_F_F_F_F    OPERATORS      1 x      1      1 clocked_ram_8_8_256_F_T_F_F_F_F_F_F
+
+ Number of ports :                      31
+ Number of nets :                       43
+ Number of instances :                  13
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box AND2 :                        2
+ Black Box DFF :                         8
+ Black Box FALSE :                       1
+ Black Box TRUE :                        1
+ Black Box clocked_ram_8_8_256_F_T_F_F_F_F_F_F :     1
+ Number of accumulated instances :      13
+
+********************************************
+
+Library: work    Cell: mem_8_8    View: main
+
+********************************************
+
+  Cell                     Library  References     Total Area
+
+ FALSE                     PRIMITIVES     1 x      1      1 FALSE
+ TRUE                      PRIMITIVES     1 x      1      1 TRUE
+ ram_new_0_mem_8_8_main    OPERATORS      1 x      2      2 AND2
+                                                   1      1 clocked_ram_8_8_256_F_T_F_F_F_F_F_F
+                                                   8      8 DFF
+                                                   1      1 TRUE
+                                                   1      1 FALSE
+
+ Number of ports :                      26
+ Number of nets :                       28
+ Number of instances :                   3
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box AND2 :                        2
+ Black Box DFF :                         8
+ Black Box FALSE :                       2
+ Black Box TRUE :                        2
+ Black Box clocked_ram_8_8_256_F_T_F_F_F_F_F_F :     1
+ Number of accumulated instances :      15
+
+*********************************************************************
+
+Library: OPERATORS    Cell: ram_new_0_mem_8_8_main    View: INTERFACE
+
+*********************************************************************
+
+  Cell                                  Library  References     Total Area
+
+ AND2                                   PRIMITIVES     2 x      1      2 AND2
+ DFF                                    PRIMITIVES     8 x      1      8 DFF
+ FALSE                                  PRIMITIVES     1 x      1      1 FALSE
+ TRUE                                   PRIMITIVES     1 x      1      1 TRUE
+ clocked_ram_8_8_256_F_T_F_F_F_F_F_F    OPERATORS      1 x      1      1 clocked_ram_8_8_256_F_T_F_F_F_F_F_F
+
+ Number of ports :                      31
+ Number of nets :                       43
+ Number of instances :                  13
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box AND2 :                        2
+ Black Box DFF :                         8
+ Black Box FALSE :                       1
+ Black Box TRUE :                        1
+ Black Box clocked_ram_8_8_256_F_T_F_F_F_F_F_F :     1
+ Number of accumulated instances :      13
+
+*****************************************************
+
+Library: work    Cell: mem_8_8    View: main_unfold_2
+
+*****************************************************
+
+  Cell                     Library  References     Total Area
+
+ FALSE                     PRIMITIVES     1 x      1      1 FALSE
+ TRUE                      PRIMITIVES     1 x      1      1 TRUE
+ ram_new_0_mem_8_8_main    OPERATORS      1 x      2      2 AND2
+                                                   1      1 clocked_ram_8_8_256_F_T_F_F_F_F_F_F
+                                                   8      8 DFF
+                                                   1      1 TRUE
+                                                   1      1 FALSE
+
+ Number of ports :                      26
+ Number of nets :                       28
+ Number of instances :                   3
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box AND2 :                        2
+ Black Box DFF :                         8
+ Black Box FALSE :                       2
+ Black Box TRUE :                        2
+ Black Box clocked_ram_8_8_256_F_T_F_F_F_F_F_F :     1
+ Number of accumulated instances :      15
+
+**********************************************************************************
+
+Library: OPERATORS    Cell: clocked_ram_8_8_256_F_T_F_F_F_F_F_F    View: INTERFACE
+
+**********************************************************************************
+
+ Number of ports :                      34
+ Number of nets :                        0
+ Number of instances :                   0
+ Number of references to this view :     3
+
+Total accumulated area : 
+ Number of clocked_ram_8_8_256_F_T_F_F_F_F_F_F :     1
+
+******************************************************************************
+
+Library: OPERATORS    Cell: ram_new_0_mem_8_8_main    View: INTERFACE_unfold_2
+
+******************************************************************************
+
+  Cell                                  Library  References     Total Area
+
+ AND2                                   PRIMITIVES     2 x      1      2 AND2
+ DFF                                    PRIMITIVES     8 x      1      8 DFF
+ FALSE                                  PRIMITIVES     1 x      1      1 FALSE
+ TRUE                                   PRIMITIVES     1 x      1      1 TRUE
+ clocked_ram_8_8_256_F_T_F_F_F_F_F_F    OPERATORS      1 x      1      1 clocked_ram_8_8_256_F_T_F_F_F_F_F_F
+
+ Number of ports :                      31
+ Number of nets :                       43
+ Number of instances :                  13
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box AND2 :                        2
+ Black Box DFF :                         8
+ Black Box FALSE :                       1
+ Black Box TRUE :                        1
+ Black Box clocked_ram_8_8_256_F_T_F_F_F_F_F_F :     1
+ Number of accumulated instances :      13
+
+*****************************************************
+
+Library: work    Cell: mem_8_8    View: main_unfold_1
+
+*****************************************************
+
+  Cell                     Library  References     Total Area
+
+ FALSE                     PRIMITIVES     1 x      1      1 FALSE
+ TRUE                      PRIMITIVES     1 x      1      1 TRUE
+ ram_new_0_mem_8_8_main    OPERATORS      1 x      2      2 AND2
+                                                   1      1 clocked_ram_8_8_256_F_T_F_F_F_F_F_F
+                                                   8      8 DFF
+                                                   1      1 TRUE
+                                                   1      1 FALSE
+
+ Number of ports :                      26
+ Number of nets :                       28
+ Number of instances :                   3
+ Number of references to this view :     1
+
+Total accumulated area : 
+ Black Box AND2 :                        2
+ Black Box DFF :                         8
+ Black Box FALSE :                       2
+ Black Box TRUE :                        2
+ Black Box clocked_ram_8_8_256_F_T_F_F_F_F_F_F :     1
+ Number of accumulated instances :      15
+
+*******************************************
+
+Library: work    Cell: kirsch    View: main
+
+*******************************************
+
+  Cell                                        Library  References     Total Area
+
+ AND2                                         PRIMITIVES    53 x      1     53 AND2
+ DFF                                          PRIMITIVES    88 x      1     88 DFF
+ DFFE                                         PRIMITIVES   125 x      1    125 DFFE
+ DFFRSE                                       PRIMITIVES    11 x      1     11 DFFRSE
+ FALSE                                        PRIMITIVES     1 x      1      1 FALSE
+ INV                                          PRIMITIVES    29 x      1     29 INV
+ MUX                                          PRIMITIVES   148 x      1    148 MUX
+ OR2                                          PRIMITIVES     7 x      1      7 OR2
+ TRUE                                         PRIMITIVES     1 x      1      1 TRUE
+ add_11u_11u_11u_0_0                          OPERATORS      2 x      1      2 add_11u_11u_11u_0_0
+ add_8u_8u_8u_0_0                             OPERATORS      1 x      1      1 add_8u_8u_8u_0_0
+ add_9u_9u_9u_0_0                             OPERATORS      1 x      1      1 add_9u_9u_9u_0_0
+ and_3u_3u                                    OPERATORS      2 x      1      2 and_3u_3u
+ and_4u_4u                                    OPERATORS      1 x      1      1 and_4u_4u
+ and_8u_8u                                    OPERATORS      2 x      1      2 and_8u_8u
+ counter_up_cnt_en_sclear_clock_0_8           OPERATORS      1 x      8      8 AND2
+                                                                      1      1 INV
+                                                                      1      1 TRUE
+                                                                      1      1 inc_8u_8u_0_0
+                                                                      8      8 DFFE
+                                                                      1      1 OR2
+                                                                      1      1 FALSE
+ counter_up_cnt_en_sclear_clock_clk_en_0_8    OPERATORS      1 x      1      1 INV
+                                                                      1      1 TRUE
+                                                                      1      1 inc_8u_8u_0_0
+                                                                      8      8 DFFE
+                                                                      9      9 AND2
+                                                                      1      1 OR2
+                                                                      1      1 FALSE
+ inc_2u_2u_0                                  OPERATORS      1 x      1      1 inc_2u_2u_0
+ mem_8_8                                      work           1 x      2      2 TRUE
+                                                                      8      8 DFF
+                                                                      1      1 clocked_ram_8_8_256_F_T_F_F_F_F_F_F
+                                                                      2      2 AND2
+                                                                      2      2 FALSE
+ mem_8_8                                      work           1 x      2      2 TRUE
+                                                                      8      8 DFF
+                                                                      1      1 clocked_ram_8_8_256_F_T_F_F_F_F_F_F
+                                                                      2      2 AND2
+                                                                      2      2 FALSE
+ mem_8_8                                      work           1 x      2      2 TRUE
+                                                                      8      8 DFF
+                                                                      1      1 clocked_ram_8_8_256_F_T_F_F_F_F_F_F
+                                                                      2      2 AND2
+                                                                      2      2 FALSE
+ mux_3u_3u                                    OPERATORS     16 x      1     16 mux_3u_3u
+ or_3u_3u                                     OPERATORS      2 x      1      2 or_3u_3u
+ or_5u_5u                                     OPERATORS      1 x      1      1 or_5u_5u
+ or_7u_7u                                     OPERATORS      1 x      1      1 or_7u_7u
+ or_8u_8u                                     OPERATORS      1 x      1      1 or_8u_8u
+ sub_10u_10u_10u_0                            OPERATORS      2 x      1      2 sub_10u_10u_10u_0
+ sub_12u_12u_12u_0                            OPERATORS      1 x      1      1 sub_12u_12u_12u_0
+ sub_8u_8u_8u_0                               OPERATORS      1 x      1      1 sub_8u_8u_8u_0
+
+ Number of ports :                      95
+ Number of nets :                      594
+ Number of instances :                 503
+ Number of references to this view :     0
+
+Total accumulated area : 
+ Black Box AND2 :                       76
+ Black Box DFF :                       112
+ Black Box DFFE :                      141
+ Black Box DFFRSE :                     11
+ Black Box FALSE :                       9
+ Black Box INV :                        31
+ Black Box MUX :                       148
+ Black Box OR2 :                         9
+ Black Box TRUE :                        9
+ Black Box add_11u_11u_11u_0_0 :         2
+ Black Box add_8u_8u_8u_0_0 :            1
+ Black Box add_9u_9u_9u_0_0 :            1
+ Black Box and_3u_3u :                   2
+ Black Box and_4u_4u :                   1
+ Black Box and_8u_8u :                   2
+ Black Box clocked_ram_8_8_256_F_T_F_F_F_F_F_F :     3
+ Black Box inc_2u_2u_0 :                 1
+ Black Box inc_8u_8u_0_0 :               2
+ Black Box mux_3u_3u :                  16
+ Black Box or_3u_3u :                    2
+ Black Box or_5u_5u :                    1
+ Black Box or_7u_7u :                    1
+ Black Box or_8u_8u :                    1
+ Black Box sub_10u_10u_10u_0 :           2
+ Black Box sub_12u_12u_12u_0 :           1
+ Black Box sub_8u_8u_8u_0 :              1
+ Number of accumulated instances :     586
