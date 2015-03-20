@@ -1,6 +1,9 @@
 # ignore all temp files
 uw-tmp/**
+uw-tmp
 work-msim/**
+work-msim
 LOG/**
 RPT/**
 
+!kirsch*

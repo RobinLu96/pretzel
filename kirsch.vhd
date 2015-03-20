@@ -405,14 +405,18 @@ begin
 		else 
 			output_edge <= ((sub4(7) and sub4(8)) or (sub4(12) or sub4(11) or sub4(10) or sub4(9)));
 		end if;
+		
+		o_edge <= output_edge;
+		if output_edge = '1' and v(7) = '1' then
+			o_dir <= dir7;
+		else 
+			o_dir <= "000";
+		end if;
 	end process;
 
   --connecting to output ports
   o_row <= std_logic_vector(y);
   o_valid <= output_valid;
-  o_edge <= output_edge;
-  o_dir <= dir7 when output_edge = '1' and v(7) = '1'
-           else "000";
   o_mode <=mode;
  
 end architecture;

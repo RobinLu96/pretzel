@@ -1,104 +1,0 @@
-uw-sim Y:\bin\uw-sim --timing kirsch.uwp
-INFO: Using testbench        : kirsch_tb
-INFO: Using design entity    : kirsch
-INFO: Using simulation script: kirsch_tb.sim
-** Warning: vmap will not overwrite local modelsim.ini.
- ** Warning: (vlib-34) Library already exists at "work-msim".
- ** Warning: (vlib-34) Library already exists at "altera_mf".
- Modifying modelsim.ini
- ** Warning: (vlib-34) Library already exists at "cycloneii".
- Modifying modelsim.ini
- DEBUG: try_set: ECE327_HOME: False: /watform/pkg/ece327
-DEBUG: try_set: ECE327_HOME: True: Y:/
-DEBUG: try_set: modelsim: False: /CMC/local/maagaard/bin/
-DEBUG: try_set: modelsim: False: /watform/pkg/modelsim/
-DEBUG: try_set: modelsim: False: /opt/modelsim/
-DEBUG: try_set: modelsim: True: C:/Software/modeltech_10.1/win32/
-DEBUG: try_set: precision: False: /watform/pkg/precision/
-DEBUG: try_set: precision: False: /opt/precision/
-DEBUG: try_set: precision: True: C:/Program Files (x86)/Mentor Graphics/Precision Synthesis 2008a.47/Mgc_home/bin/
-DEBUG: try_set: quartus: False: /watform/pkg/quartus/
-DEBUG: try_set: quartus: False: /opt/quartus/
-DEBUG: try_set: quartus: True: C:/Software/Altera/10.1/quartus/bin/
-DEBUG: try_set: altera_sim_lib: True: Y://altera
-DEBUG: default_board: DE2
-** Warning: (vlib-34) Library already exists at "work-msim".
-** Warning: (vlib-34) Library already exists at "work-msim".
-  Model Technology ModelSim SE vlog 10.1 Compiler 2011.12 Dec  5 2011
-Model Technology ModelSim SE vlog 10.1 Compiler 2011.12 Dec  5 2011
--- Compiling module kirsch_chip
--- Compiling module kirsch_chip
-
-
-Top level modules:
-Top level modules:
-	kirsch_chip
-	kirsch_chip
-  Model Technology ModelSim SE vcom 10.1 Compiler 2011.12 Dec  5 2011
-Model Technology ModelSim SE vcom 10.1 Compiler 2011.12 Dec  5 2011
--- Loading package STANDARD
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package std_logic_1164
--- Loading package VITAL_Timing
--- Loading package VITAL_Timing
--- Loading package VITAL_Primitives
--- Loading package VITAL_Primitives
--- Loading package cycloneii_atom_pack
--- Loading package cycloneii_atom_pack
--- Loading package cycloneii_components
--- Loading package cycloneii_components
--- Compiling entity kirsch_chip
--- Compiling entity kirsch_chip
--- Compiling architecture structure of kirsch_chip
--- Compiling architecture structure of kirsch_chip
--- Loading package NUMERIC_STD
--- Loading package NUMERIC_STD
--- Compiling entity kirsch
--- Compiling entity kirsch
--- Compiling architecture shim of kirsch
--- Compiling architecture shim of kirsch
--- Loading entity kirsch_chip
--- Loading entity kirsch_chip
--- Compiling package string_pkg
--- Compiling package string_pkg
--- Compiling package body string_pkg
--- Compiling package body string_pkg
--- Loading package string_pkg
--- Loading package string_pkg
--- Compiling package kirsch_synth_pkg
--- Compiling package kirsch_synth_pkg
--- Compiling package body kirsch_synth_pkg
--- Compiling package body kirsch_synth_pkg
--- Loading package kirsch_synth_pkg
--- Loading package kirsch_synth_pkg
--- Compiling package file_pkg
--- Compiling package file_pkg
--- Compiling package body file_pkg
--- Compiling package body file_pkg
--- Loading package file_pkg
--- Loading package file_pkg
--- Loading package string_pkg
--- Loading package string_pkg
--- Loading package file_pkg
--- Loading package file_pkg
--- Loading package kirsch_synth_pkg
--- Loading package kirsch_synth_pkg
--- Compiling package kirsch_unsynth_pkg
--- Compiling package kirsch_unsynth_pkg
--- Compiling package body kirsch_unsynth_pkg
--- Compiling package body kirsch_unsynth_pkg
--- Loading package kirsch_unsynth_pkg
--- Loading package kirsch_unsynth_pkg
--- Loading package kirsch_unsynth_pkg
--- Loading package kirsch_unsynth_pkg
--- Compiling entity kirsch_tb
--- Compiling entity kirsch_tb
--- Compiling architecture main of kirsch_tb
--- Compiling architecture main of kirsch_tb
--- Loading entity kirsch
--- Loading entity kirsch
- 
- Reading C:/Software/modeltech_10.1/tcl/vsim/pref.tcl 
