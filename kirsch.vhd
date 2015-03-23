@@ -129,7 +129,7 @@ begin
     if i_reset = '1' then
       x <= "00000000";
 	  y <= "00000000";
-	    end_of_img <= '0';
+	  end_of_img <= '0';
 	  mem_write <="001";
 	elsif i_valid = '1' then
 		if (end_of_img = '1') then
@@ -170,7 +170,6 @@ begin
   begin
     wait until rising_edge(i_clock);
     if i_valid = '1' then
-
       a <= b;
       h <= i;
       g <= f;
@@ -181,110 +180,129 @@ begin
 	  -- load data from temp arrays
 	  c <= "00" & q1;
 	  d <= "00" & q2;
+    else
+	  a <= a;
+      h <= h;
+      g <= g;
+      b <= b;
+      i <= i;
+      f <= f;
+      e <= e;
+	  c <= c;
+	  d <= d;
 	end if;
   end process;
 
-  process --pipeline
-  begin
-    wait until rising_edge(i_clock);
-    o_valid <= '0';
-    if i_reset = '1' then
-      valid_bits <= "00000000";
-    else
-      valid_bits <= "sll"(valid_bits, 1);
-			if i_valid = '1' and ((x = "11111111" and unsigned(y) > 2) or (unsigned(y) > 1  and  unsigned(x) > 1)) then
-				valid_bits(0) <= '1';
-			end if;
-			if valid_bits(0) = '1' then
-				if  (g < b) then
-					max1 <= b + a + h;
-					--NW
-					dir1 <= "100";
-				else
-					--  (Covers priority)
-					max1 <= g + a + h;
-					--W
-					dir1 <= "001";
-				end if;
-				add1 <= ("00" & a) + ("00" & h);
-			end if;
-			if valid_bits(1) = '1' then
-				if  (a < d) then
-					max2 <= d + b + c;
-					--NE
-					dir2 <= "110";
-				else
-					max2 <= a + b + c;
-					--N
-					dir2 <= "010";
-				end if;
-				add2 <= ("00" & b) + ("00" & c);
-			end if;
-			if valid_bits(2) = '1' then
-				if  (c < f) then
-					max3 <= f + d + e;
-					--SE
-					dir3 <= "101";
-				else
-					max3 <= c + d + e;
-					--E
-					dir3 <= "000";
-				end if;
-				add3 <= ("00" & e) + ("00" & d);
-			end if;
-			if valid_bits(3) = '1' then
-				if  (e < h) then
-					max4 <= h + g + f;
-					--SW
-					dir4 <= "111";
-				else
-					max4 <= e + g + f;
-					--S
-					dir4 <= "011";
-				end if;
-				add4 <= ("00" & g) + ("00" & f);
-			end if;
-			if valid_bits(4) = '1' then
-				if  (max1 < max2) then
-					max_1 <= max2;
-					dir_1 <= dir2;
-				else
-					max_1 <= max1;
-					dir_1 <= dir1;
-				end if;
-				add_1 <= add1 + add2;
-			end if;
-			if valid_bits(5) = '1' then
-				if  (max3 < max4) then
-					max_2 <= max4;
-					dir_2 <= dir4;
-				else
-					max_2 <= max3;
-					dir_2 <= dir3;
-				end if;
-				add_1 <= add_1 + add3;
-			end if;
-			if valid_bits(6) = '1' then
-				if  (max_1 < max_2) then
-					max_3 <= max_2;
-					dir_3 <= dir_2;
-				else
-					max_3 <= max_1;
-					dir_3 <= dir_1;
-				end if;
-				add_1 <= add_1 + add4;
-			end if;
-			if valid_bits(7) = '1' then
-				if ((max_3 & "000") - ((add_1 & '0') + add_1)) > 383 then
-					o_edge <= '1';
-					o_dir <= dir_3;
-				else
-					o_edge <= '0';
-					o_dir <= "000";
-				end if;
-				o_valid <=  '1';
-			end if;
+	process --pipeline
+	begin
+	wait until rising_edge(i_clock);
+	o_valid <= '0';
+	if i_reset = '1' then
+		valid_bits <= "00000000";
+	else
+		valid_bits <= "sll"(valid_bits, 1);
+		
+		if i_valid = '1' and ((x = "11111111" and unsigned(y) > 2) or (unsigned(y) > 1  and  unsigned(x) > 1)) then
+			valid_bits(0) <= '1';
 		end if;
+		
+		if valid_bits(0) = '1' then
+			if  (g < b) then
+				max1 <= b + a + h;
+				--NW
+				dir1 <= "100";
+				else
+				--  (Covers priority)
+				max1 <= g + a + h;
+				--W
+				dir1 <= "001";
+			end if;
+			add1 <= ("00" & a) + ("00" & h);
+		end if;
+		
+		if valid_bits(1) = '1' then
+			if  (a < d) then
+				max2 <= d + b + c;
+				--NE
+				dir2 <= "110";
+			else
+				max2 <= a + b + c;
+				--N
+				dir2 <= "010";
+			end if;
+			add2 <= ("00" & b) + ("00" & c);
+		end if;
+		
+		if valid_bits(2) = '1' then
+			if  (c < f) then
+				max3 <= f + d + e;
+				--SE
+				dir3 <= "101";
+			else
+				max3 <= c + d + e;
+				--E
+				dir3 <= "000";
+			end if;
+			add3 <= ("00" & e) + ("00" & d);
+		end if;
+		
+		if valid_bits(3) = '1' then
+			if  (e < h) then
+				max4 <= h + g + f;
+				--SW
+				dir4 <= "111";
+			else
+				max4 <= e + g + f;
+				--S
+				dir4 <= "011";
+			end if;
+			add4 <= ("00" & g) + ("00" & f);
+		end if;
+		
+		if valid_bits(4) = '1' then
+			if  (max1 < max2) then
+				max_1 <= max2;
+				dir_1 <= dir2;
+			else
+				max_1 <= max1;
+				dir_1 <= dir1;
+			end if;
+			add_1 <= add1 + add2;
+		end if;
+		
+		if valid_bits(5) = '1' then
+			if  (max3 < max4) then
+				max_2 <= max4;
+				dir_2 <= dir4;
+			else
+				max_2 <= max3;
+				dir_2 <= dir3;
+			end if;
+			add_1 <= add_1 + add3;
+		end if;
+		
+		if valid_bits(6) = '1' then
+			if  (max_1 < max_2) then
+				max_3 <= max_2;
+				dir_3 <= dir_2;
+			else
+				max_3 <= max_1;
+				dir_3 <= dir_1;
+			end if;
+			add_1 <= add_1 + add4;
+		end if;
+		
+		if valid_bits(7) = '1' then
+			if ((max_3 & "000") - ((add_1 & '0') + add_1)) > 383 then
+				o_edge <= '1';
+				o_dir <= dir_3;
+			else
+				o_edge <= '0';
+				o_dir <= "000";
+			end if;
+		o_valid <=  '1';
+		end if;
+	end if;
 	end process;
 
   --connecting to output ports

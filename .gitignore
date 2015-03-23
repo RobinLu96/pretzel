@@ -5,5 +5,7 @@ work-msim/**
 work-msim
 LOG/**
 RPT/**
+tests/**
+transcript
 
 !kirsch*
